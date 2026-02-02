@@ -87,15 +87,40 @@
 }
 
 /* ===== Accessibility Improvements ===== */
+/* Skip to main content - Hidden by default, visible only when focused (WCAG 2.1 best practice)
+   This pattern ensures:
+   - Link is completely hidden (not just off-screen)
+   - No layout shift or UI breakage
+   - Visible on keyboard focus (Tab key)
+   - Screen reader accessible
+   - Z-index is high enough to overlay other content */
 .skip-to-main {
-  @apply absolute -top-12 left-0 bg-blue-600 text-white px-4 py-2 rounded focus:top-0 transition-all z-50;
+  position: absolute;
+  top: -100%; /* Hide above viewport */
+  left: 0;
+  width: 100%;
+  background-color: #4F46E5; /* indigo-600 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  z-index: 50;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: top 0.3s ease;
+}
+
+.skip-to-main:focus {
+  top: 0; /* Bring into view on focus */
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
 
 /* Focus states for keyboard navigation */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-  @apply outline-2 outline-offset-2 outline-blue-600;
+  @apply outline-2 outline-offset-2 outline-cyan-500;
 }
 
 /* Smooth transitions on interactive elements */
