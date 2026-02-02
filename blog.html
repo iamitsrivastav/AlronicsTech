@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== Meta Tags ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alronics Tech Blog - Tutorials on Robotics, IoT, AI, Raspberry Pi, Scratch, and 3D Printing. Learn hands-on tech with complete guides and code.">
+  <meta name="keywords" content="robotics tutorial, IoT projects, AI learning, Raspberry Pi, Scratch programming, 3D printing, STEM education">
+  <meta name="author" content="Alronics Tech">
+  <meta name="theme-color" content="#2563eb">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alronics Tech Blog - Robotics & IoT Tutorials">
+  <meta property="og:description" content="Comprehensive tutorials for robotics, IoT, AI, and electronics projects">
+  <meta property="og:url" content="https://alronicstech.github.io/blog.html">
+
+  <title>Blog | Alronics Tech</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="bg-white">
+  <!-- ===== Navbar ===== -->
+  <script src="/assets/js/navbar.js"></script>
+
+  <!-- ===== Page Header ===== -->
+  <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="mb-6" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm text-blue-100">
+          <li><a href="/" class="hover:text-white">Home</a></li>
+          <li>/</li>
+          <li aria-current="page" class="text-white font-medium">Blog</li>
+        </ol>
+      </nav>
+      <h1 class="text-5xl font-bold mb-4">Blog & Tutorials</h1>
+      <p class="text-xl text-blue-100">
+        Learn robotics, IoT, AI, and electronics through hands-on tutorials with complete documentation.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- ===== Category Filter ===== -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Browse by Category</h2>
+      <div class="flex flex-wrap gap-3">
+        <button class="category-filter-btn active px-6 py-2 rounded-full border-2 border-blue-600 bg-blue-600 text-white font-medium transition-all" data-filter="all">
+          All Projects
+        </button>
+        <button class="category-filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-700 font-medium hover:border-blue-600 transition-all" data-filter="robotics">
+          🤖 Robotics
+        </button>
+        <button class="category-filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-700 font-medium hover:border-blue-600 transition-all" data-filter="iot">
+          📡 IoT
+        </button>
+        <button class="category-filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-700 font-medium hover:border-blue-600 transition-all" data-filter="ai">
+          🧠 AI & ML
+        </button>
+        <button class="category-filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-700 font-medium hover:border-blue-600 transition-all" data-filter="raspberry-pi">
+          🍓 Raspberry Pi
+        </button>
+        <button class="category-filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-700 font-medium hover:border-blue-600 transition-all" data-filter="scratch">
+          🎮 Scratch & App
+        </button>
+        <button class="category-filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-700 font-medium hover:border-blue-600 transition-all" data-filter="3d-printing">
+          🖨️ 3D Printing
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== Blog Posts Grid ===== -->
+    <div id="blog-grid" class="blog-grid">
+      <!-- Robotics Project 1 -->
+      <a href="/blog/robotics/obstacle.html" class="blog-post card-hover" data-category="robotics">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+            Robotics
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Obstacle Avoidance Robot</h3>
+        <p class="text-gray-600 mb-4">
+          Build a robot that detects obstacles and navigates around them using ultrasonic sensors. Learn sensor integration and motor control.
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 10 min read</span>
+          <span class="text-blue-600 font-medium">Read →</span>
+        </div>
+      </a>
+
+      <!-- IoT Project 1 -->
+      <div class="blog-post card-hover" data-category="iot">
+        <div class="mb-4">
+          <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+            IoT
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Smart Temperature Monitor</h3>
+        <p class="text-gray-600 mb-4">
+          Create a WiFi-enabled temperature and humidity monitor with real-time data logging to the cloud.
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 12 min read</span>
+          <span class="text-blue-600 font-medium">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- AI Project 1 -->
+      <div class="blog-post card-hover" data-category="ai">
+        <div class="mb-4">
+          <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+            AI & ML
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Image Recognition with TensorFlow</h3>
+        <p class="text-gray-600 mb-4">
+          Learn to build an AI model that recognizes objects in images using machine learning and neural networks.
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 15 min read</span>
+          <span class="text-blue-600 font-medium">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Raspberry Pi Project 1 -->
+      <div class="blog-post card-hover" data-category="raspberry-pi">
+        <div class="mb-4">
+          <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+            Raspberry Pi
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">GPIO Control & LED Blinking</h3>
+        <p class="text-gray-600 mb-4">
+          Master Raspberry Pi GPIO pins by building a simple LED control project. Perfect for beginners!
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 8 min read</span>
+          <span class="text-blue-600 font-medium">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Scratch Project 1 -->
+      <div class="blog-post card-hover" data-category="scratch">
+        <div class="mb-4">
+          <span class="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+            Scratch
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Game Development in Scratch</h3>
+        <p class="text-gray-600 mb-4">
+          Create your first interactive game using Scratch's visual programming blocks. No coding experience needed!
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 9 min read</span>
+          <span class="text-blue-600 font-medium">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- 3D Printing Project 1 -->
+      <div class="blog-post card-hover" data-category="3d-printing">
+        <div class="mb-4">
+          <span class="inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+            3D Printing
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Designing Robot Parts in Fusion 360</h3>
+        <p class="text-gray-600 mb-4">
+          Learn CAD design basics and create custom parts for your robots using Autodesk Fusion 360.
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 14 min read</span>
+          <span class="text-blue-600 font-medium">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Robotics Project 2 -->
+      <div class="blog-post card-hover" data-category="robotics">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+            Robotics
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Line Following Robot</h3>
+        <p class="text-gray-600 mb-4">
+          Build a robot that follows a black line using infrared sensors. Learn sensor calibration and motor control.
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 11 min read</span>
+          <span class="text-blue-600 font-medium">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- IoT Project 2 -->
+      <div class="blog-post card-hover" data-category="iot">
+        <div class="mb-4">
+          <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+            IoT
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Smart Home Light Control</h3>
+        <p class="text-gray-600 mb-4">
+          Control lights remotely using Node-RED and MQTT protocol. Build your first smart home device.
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 13 min read</span>
+          <span class="text-blue-600 font-medium">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- AI Project 2 -->
+      <div class="blog-post card-hover" data-category="ai">
+        <div class="mb-4">
+          <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+            AI & ML
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Chatbot Using Python & NLP</h3>
+        <p class="text-gray-600 mb-4">
+          Create an intelligent chatbot using natural language processing. Learn AI basics with a fun project.
+        </p>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-500">📚 16 min read</span>
+          <span class="text-blue-600 font-medium">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Empty State ===== -->
+    <div id="empty-state" class="text-center py-12 hidden">
+      <p class="text-xl text-gray-600">No posts found in this category yet. Check back soon!</p>
+    </div>
+
+    <!-- ===== CTA Section ===== -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg p-8 mt-16 text-center">
+      <h2 class="text-3xl font-bold mb-4">Want to Build These Projects?</h2>
+      <p class="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
+        Subscribe to our YouTube channel for step-by-step video tutorials, tips, and project updates every week.
+      </p>
+      <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer"
+         class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-block">
+        ▶ Subscribe on YouTube
+      </a>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-white font-bold text-lg mb-4">Alronics Tech</h3>
+          <p class="text-sm">
+            Educational platform for learning Robotics, IoT, and AI through hands-on projects.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/index.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="/blog.html" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/projects.html" class="hover:text-white transition-colors">Projects</a></li>
+            <li><a href="/resources.html" class="hover:text-white transition-colors">Resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Categories</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">Robotics</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">IoT</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">AI & ML</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Raspberry Pi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Connect</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">▶ YouTube</a></li>
+            <li><a href="/contact.html" class="hover:text-white transition-colors">✉️ Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-gray-700 mb-8">
+      <div class="text-center text-sm">
+        <p>&copy; 2026 Alronics Tech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Blog Filter Script ===== -->
+  <script>
+    const filterButtons = document.querySelectorAll('.category-filter-btn');
+    const blogPosts = document.querySelectorAll('.blog-post');
+    const emptyState = document.getElementById('empty-state');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const filter = this.getAttribute('data-filter');
+
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+          btn.classList.add('border-gray-300', 'text-gray-700');
+        });
+        this.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+        this.classList.remove('border-gray-300', 'text-gray-700');
+
+        // Filter posts
+        let hasVisible = false;
+        blogPosts.forEach(post => {
+          if (filter === 'all' || post.getAttribute('data-category') === filter) {
+            post.style.display = 'block';
+            setTimeout(() => post.classList.add('fade-in'), 10);
+            hasVisible = true;
+          } else {
+            post.style.display = 'none';
+            post.classList.remove('fade-in');
+          }
+        });
+
+        // Show empty state if no posts
+        emptyState.classList.toggle('hidden', hasVisible);
+      });
+    });
+  </script>
+</body>
+</html>
