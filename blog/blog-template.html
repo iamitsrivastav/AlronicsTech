@@ -25,27 +25,37 @@
 
   <!-- ===== Critical: Skip Link Accessibility (must be inline to load before first paint) ===== -->
   <style>
+    /* Hide skip link by default - using multiple techniques to ensure it works
+       even if Tailwind CSS or other styles try to override */
     .skip-to-main {
-      position: absolute;
-      left: -9999px;
-      z-index: 9999;
-      background-color: #4F46E5;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      font-weight: 600;
-      text-align: center;
-      white-space: nowrap;
+      position: absolute !important;
+      left: -9999px !important;
+      z-index: 9999 !important;
+      background-color: #4F46E5 !important;
+      color: white !important;
+      padding: 0.75rem 1.5rem !important;
+      text-decoration: none !important;
+      font-weight: 600 !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+      display: block !important;
+      width: auto !important;
+      height: auto !important;
+      overflow: hidden !important;
+      clip: rect(1px, 1px, 1px, 1px) !important;
     }
     
+    /* Show on keyboard focus only */
     .skip-to-main:focus {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      outline: 2px solid white;
-      outline-offset: 2px;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      clip: auto !important;
+      overflow: visible !important;
+      outline: 2px solid white !important;
+      outline-offset: 2px !important;
     }
   </style>
 </head>

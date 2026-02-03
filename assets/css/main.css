@@ -87,36 +87,9 @@
 }
 
 /* ===== Accessibility Improvements ===== */
-/* Skip to main content - Hidden by default using position off-screen (WCAG 2.1)
-   This pattern ensures:
-   - Works even if CSS doesn't load (inline styles in HTML head handle it)
-   - No layout shift or visual impact
-   - Visible only on keyboard focus (Tab key)
-   - Screen reader accessible
-   - Z-index high enough to overlay other content
-   - Works identically on localhost and GitHub Pages */
-.skip-to-main {
-  position: absolute;
-  left: -9999px;
-  z-index: 9999;
-  background-color: #4F46E5; /* indigo-600 */
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.skip-to-main:focus {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  outline: 2px solid white;
-  outline-offset: 2px;
-}
+/* Skip to main content - Already handled by inline CSS in HTML head
+   The inline <style> tag in the <head> ensures visibility control works
+   DO NOT add conflicting CSS here to avoid fighting with inline styles */
 
 /* Focus states for keyboard navigation */
 a:focus-visible,
