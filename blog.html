@@ -52,6 +52,15 @@
       outline: 2px solid white !important;
       outline-offset: 2px !important;
     }
+
+    /* Ensure navbar is always visible - fallback if Tailwind doesn't load */
+    nav[role="navigation"] {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 50 !important;
+      display: block !important;
+      width: 100% !important;
+    }
   </style>
 </head>
 <body class="bg-slate-50">
