@@ -17,6 +17,32 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
+
+  <!-- ===== Critical: Skip Link Accessibility (must be inline to load before first paint) ===== -->
+  <style>
+    .skip-to-main {
+      position: absolute;
+      left: -9999px;
+      z-index: 9999;
+      background-color: #4F46E5;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+    }
+    
+    .skip-to-main:focus {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 <body class="bg-slate-50">
   <!-- ===== Navbar ===== -->

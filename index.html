@@ -35,6 +35,34 @@
 
   <!-- ===== Favicon ===== -->
   <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+
+  <!-- ===== Critical: Skip Link Accessibility (must be inline to load before first paint) ===== -->
+  <style>
+    /* Hide skip link by default using position off-screen (works even if CSS doesn't load) */
+    .skip-to-main {
+      position: absolute;
+      left: -9999px;
+      z-index: 9999;
+      background-color: #4F46E5;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+    }
+    
+    /* Show on keyboard focus only */
+    .skip-to-main:focus {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 <body class="bg-slate-50">
   <!-- Skip to main content link for accessibility - WCAG compliant -->
