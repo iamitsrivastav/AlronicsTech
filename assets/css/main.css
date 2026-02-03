@@ -89,29 +89,32 @@
 /* ===== Accessibility Improvements ===== */
 /* Skip to main content - Hidden by default, visible only when focused (WCAG 2.1 best practice)
    This pattern ensures:
-   - Link is completely hidden (not just off-screen)
-   - No layout shift or UI breakage
+   - Link is completely hidden (not just off-screen) via clip-path
+   - No layout shift or UI breakage (removed from document flow)
    - Visible on keyboard focus (Tab key)
    - Screen reader accessible
-   - Z-index is high enough to overlay other content */
+   - Z-index is high enough to overlay other content
+   - Works correctly on GitHub Pages and localhost */
 .skip-to-main {
-  position: absolute;
-  top: -100%; /* Hide above viewport */
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   background-color: #4F46E5; /* indigo-600 */
   color: white;
   padding: 0.75rem 1.5rem;
-  z-index: 50;
+  z-index: 9999;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   display: block;
-  transition: top 0.3s ease;
+  clip-path: inset(100%);
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .skip-to-main:focus {
-  top: 0; /* Bring into view on focus */
+  clip-path: inset(0);
   outline: 2px solid white;
   outline-offset: 2px;
 }
