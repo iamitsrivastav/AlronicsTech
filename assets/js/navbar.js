@@ -8,7 +8,7 @@
  * - Works on GitHub Pages
  */
 
-(function initNavbar() {
+function initNavbar() {
   // Define navigation links
   const navLinks = [
     { href: './index.html', label: 'Home' },
@@ -180,4 +180,11 @@
 
   // Inject navbar at the start of body
   document.body.insertBefore(navbar, document.body.firstChild);
-})();
+}
+
+// Wait for DOM to be ready before initializing navbar
+if (document.body) {
+  initNavbar();
+} else {
+  document.addEventListener('DOMContentLoaded', initNavbar);
+}
