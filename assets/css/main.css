@@ -9,8 +9,56 @@
 
 /* ===== Custom Components ===== */
 
-/* Code block with custom styling */
+/* ===== BUTTON STYLES ===== */
 @layer components {
+  /* Primary Button - Orange, used for main CTAs */
+  .btn-primary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-lg text-sm;
+  }
+
+  /* Secondary Button - Cyan, used for explore/view actions */
+  .btn-secondary {
+    @apply bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-lg text-sm;
+  }
+
+  /* Tertiary Button - White border, used on colored backgrounds */
+  .btn-tertiary {
+    @apply border-2 border-white text-white hover:bg-white hover:text-indigo-700 font-bold py-3 px-6 rounded-lg transition-all text-sm;
+  }
+
+  /* Small Button - Compact secondary action */
+  .btn-small {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition-colors text-sm;
+  }
+
+  /* ===== HEADING STYLES ===== */
+  /* Main page heading */
+  .heading-lg {
+    @apply text-5xl font-bold text-slate-900 mb-4;
+  }
+
+  /* Section heading */
+  .heading-md {
+    @apply text-3xl font-bold text-slate-900 mb-8;
+  }
+
+  /* Subsection heading */
+  .heading-sm {
+    @apply text-2xl font-bold text-slate-900 mb-3;
+  }
+
+  /* Small feature label */
+  .heading-xs {
+    @apply text-lg font-bold text-slate-900 mb-2;
+  }
+
+  /* Center-aligned heading (for sections) */
+  .heading-center {
+    @apply text-center mb-20;
+  }
+
+  /* ===== EXISTING COMPONENTS ===== */
+  /* Code block with custom styling */
   .code-block {
     @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono border border-gray-700;
   }
@@ -32,27 +80,6 @@
   /* Category card */
   .category-card {
     @apply p-6 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 hover:shadow-md transition-shadow;
-  }
-
-  /* Button primary */
-  .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors;
-  }
-
-  /* Button secondary */
-  .btn-secondary {
-    @apply border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition-colors;
-  }
-
-  /* Responsive grid for blog cards */
-  .blog-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
-  }
-
-  /* Smooth scroll behavior */
-  html {
-    @apply scroll-smooth;
-  }
 }
 
 /* ===== Animations ===== */
