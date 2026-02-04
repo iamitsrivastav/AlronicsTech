@@ -38,50 +38,52 @@
 
   <!-- ===== Critical: Skip Link Accessibility (must be inline to load before first paint) ===== -->
   <style>
-    /* Skip link hidden state: uses position: fixed to remove from document flow completely.
-       Does NOT depend on Tailwind or external CSS. Ensures zero layout impact. */
+    /* Skip link hidden state: zero dimensions ensure zero layout impact before CSS load.
+       Uses position: fixed to completely remove from document flow.
+       Does NOT depend on Tailwind or external CSS. */
     .skip-to-main {
       position: fixed;
       top: 0;
       left: 0;
-      width: 1px;
-      height: 1px;
+      width: 0;
+      height: 0;
       padding: 0;
       margin: 0;
+      border: 0;
       overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-      background-color: #4F46E5;
-      color: white;
-      text-decoration: none;
-      z-index: 99999;
+      font-size: 0;
+      line-height: 0;
       opacity: 0;
+      visibility: hidden;
+      z-index: 99999;
       pointer-events: none;
     }
 
-    /* Show on keyboard focus: make visible and interactive */
+    /* Show on keyboard focus: make fully visible and interactive */
     .skip-to-main:focus {
       position: fixed;
       top: 0;
       left: 0;
+      right: 0;
       width: 100%;
       height: auto;
       padding: 0.75rem 1.5rem;
       margin: 0;
+      border: 0;
       overflow: visible;
-      clip: auto;
-      white-space: nowrap;
-      border-width: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      opacity: 1;
+      visibility: visible;
+      z-index: 99999;
+      pointer-events: auto;
       background-color: #4F46E5;
       color: white;
       text-decoration: none;
-      z-index: 99999;
-      opacity: 1;
-      pointer-events: auto;
       font-weight: 600;
       text-align: center;
       display: block;
+      white-space: nowrap;
       outline: 2px solid white;
       outline-offset: 2px;
     }
