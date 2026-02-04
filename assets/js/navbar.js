@@ -14,8 +14,11 @@ function initNavbar() {
   // Configuration
   const config = {
     logoDesktop: 'Alronics Tech',
-    logoMobile: 'Alronics',
+    logoMobile: 'Alronics Tech', // Changed from 'Alronics' to full branding
     youtubeUrl: 'https://www.youtube.com/@alronicstech',
+    instagramUrl: 'https://www.instagram.com/alronicstech/',
+    twitterUrl: 'https://x.com/AlronicsTech',
+    email: 'alronicstech@gmail.com',
     navLinks: [
       { href: './index.html', label: 'Home' },
       { href: './blog.html', label: 'Blog' },
@@ -78,7 +81,7 @@ function initNavbar() {
 
   // === DESKTOP MENU ===
   const desktopMenu = createElement('div', {
-    className: 'hidden md:flex max-w-7xl mx-auto px-6 lg:px-8 py-4 items-center justify-between'
+    className: 'hidden md:flex max-w-7xl mx-auto px-6 lg:px-8 py-3 items-center justify-between'
   });
 
   // Logo (desktop)
@@ -97,7 +100,7 @@ function initNavbar() {
     const isActive = isActiveLink(link.href);
     const linkEl = createElement('a', {
       href: link.href,
-      className: `px-4 py-2 rounded-lg transition-all font-medium ${
+      className: `px-4 py-2 rounded-lg transition-all font-medium text-sm ${
         isActive
           ? 'bg-orange-500 text-white shadow-lg'
           : 'text-slate-100 hover:bg-indigo-500 hover:text-white'
@@ -108,27 +111,61 @@ function initNavbar() {
   });
   desktopMenu.appendChild(desktopLinks);
 
-  // YouTube button (desktop)
-  const desktopYoutubeBtn = createElement('a', {
+  // Social links (desktop)
+  const desktopSocial = createElement('div', {
+    className: 'flex gap-3 ml-4'
+  });
+  
+  const youtubeLink = createElement('a', {
     href: config.youtubeUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-lg transition-colors font-bold text-white shadow-lg flex-shrink-0 ml-2',
+    className: 'text-white hover:text-orange-400 transition-colors',
+    'aria-label': 'YouTube'
+  }, '▶');
+  desktopSocial.appendChild(youtubeLink);
+  
+  const instagramLink = createElement('a', {
+    href: config.instagramUrl,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    className: 'text-white hover:text-orange-400 transition-colors',
+    'aria-label': 'Instagram'
+  }, '📷');
+  desktopSocial.appendChild(instagramLink);
+  
+  const twitterLink = createElement('a', {
+    href: config.twitterUrl,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    className: 'text-white hover:text-orange-400 transition-colors',
+    'aria-label': 'X (Twitter)'
+  }, '𝕏');
+  desktopSocial.appendChild(twitterLink);
+  
+  desktopMenu.appendChild(desktopSocial);
+
+  // Subscribe button (desktop)
+  const desktopSubscribeBtn = createElement('a', {
+    href: config.youtubeUrl,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    className: 'bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-lg transition-colors font-bold text-white shadow-lg flex-shrink-0 ml-3 text-sm',
     'aria-label': 'Subscribe to our YouTube channel'
   }, '▶ Subscribe');
-  desktopMenu.appendChild(desktopYoutubeBtn);
+  desktopMenu.appendChild(desktopSubscribeBtn);
 
   navbar.appendChild(desktopMenu);
 
   // === MOBILE MENU ===
   const mobileContainer = createElement('div', {
-    className: 'md:hidden px-4 sm:px-6 py-4 flex justify-between items-center'
+    className: 'md:hidden px-4 sm:px-6 py-3 flex justify-between items-center'
   });
 
-  // Logo (mobile)
+  // Logo (mobile) - Now shows full text
   const mobileLogo = createElement('a', {
     href: './index.html',
-    className: 'text-xl font-bold text-white hover:text-cyan-300 transition-colors',
+    className: 'text-lg font-bold text-white hover:text-cyan-300 transition-colors flex-shrink-0',
     'aria-current': isActiveLink('./index.html') ? 'page' : 'false'
   }, config.logoMobile);
   mobileContainer.appendChild(mobileLogo);
@@ -157,7 +194,7 @@ function initNavbar() {
     const isActive = isActiveLink(link.href);
     const linkEl = createElement('a', {
       href: link.href,
-      className: `block px-4 py-3 rounded-lg transition-all font-semibold ${
+      className: `block px-4 py-3 rounded-lg transition-all font-semibold text-sm ${
         isActive
           ? 'bg-orange-500 text-white shadow-lg'
           : 'text-slate-100 hover:bg-indigo-600 hover:text-white'
@@ -173,15 +210,66 @@ function initNavbar() {
     mobileMenu.appendChild(linkEl);
   });
 
-  // Mobile YouTube button
-  const mobileYoutubeBtn = createElement('a', {
+  // Mobile social section
+  const mobileSocialSection = createElement('div', {
+    className: 'pt-3 border-t border-indigo-500'
+  });
+  
+  const mobileSocialLabel = createElement('div', {
+    className: 'px-4 py-2 text-xs font-semibold text-slate-300 uppercase'
+  }, 'Follow Us');
+  mobileSocialSection.appendChild(mobileSocialLabel);
+  
+  const mobileSocialLinks = createElement('div', {
+    className: 'flex gap-3 px-4 py-2'
+  });
+  
+  const mobileYoutubeLink = createElement('a', {
     href: config.youtubeUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'block w-full bg-orange-500 hover:bg-orange-600 text-center py-3 rounded-lg transition-colors font-bold text-white mt-4 shadow-lg',
+    className: 'text-white hover:text-orange-400 transition-colors text-2xl',
+    'aria-label': 'YouTube'
+  }, '▶');
+  mobileSocialLinks.appendChild(mobileYoutubeLink);
+  
+  const mobileInstagramLink = createElement('a', {
+    href: config.instagramUrl,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    className: 'text-white hover:text-orange-400 transition-colors text-2xl',
+    'aria-label': 'Instagram'
+  }, '📷');
+  mobileSocialLinks.appendChild(mobileInstagramLink);
+  
+  const mobileTwitterLink = createElement('a', {
+    href: config.twitterUrl,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    className: 'text-white hover:text-orange-400 transition-colors text-2xl',
+    'aria-label': 'X (Twitter)'
+  }, '𝕏');
+  mobileSocialLinks.appendChild(mobileTwitterLink);
+  
+  const mobileEmailLink = createElement('a', {
+    href: `mailto:${config.email}`,
+    className: 'text-white hover:text-orange-400 transition-colors text-2xl',
+    'aria-label': 'Email us'
+  }, '✉️');
+  mobileSocialLinks.appendChild(mobileEmailLink);
+  
+  mobileSocialSection.appendChild(mobileSocialLinks);
+  mobileMenu.appendChild(mobileSocialSection);
+
+  // Mobile Subscribe button
+  const mobileSubscribeBtn = createElement('a', {
+    href: config.youtubeUrl,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    className: 'block w-full bg-orange-500 hover:bg-orange-600 text-center py-3 rounded-lg transition-colors font-bold text-white mt-4 shadow-lg text-sm',
     'aria-label': 'Subscribe to our YouTube channel'
   }, '▶ Subscribe');
-  mobileMenu.appendChild(mobileYoutubeBtn);
+  mobileMenu.appendChild(mobileSubscribeBtn);
 
   navbar.appendChild(mobileMenu);
 

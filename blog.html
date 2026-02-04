@@ -20,12 +20,14 @@
 
   <!-- ===== Critical: Skip Link Accessibility (must be inline to load before first paint) ===== -->
   <style>
-    /* Hide skip link by default - using multiple techniques to ensure it works
-       even if Tailwind CSS or other styles try to override */
+    /* Hide skip link by default using fixed positioning so it never affects layout
+       (must NOT occupy document flow; use position: fixed and keep it off-screen).
+       This is intentionally inline and does not depend on Tailwind or external CSS. */
     .skip-to-main {
-      position: absolute !important;
-      left: -9999px !important;
-      z-index: 9999 !important;
+      position: fixed !important;
+      top: -9999px !important; /* keep out of viewport */
+      left: 0 !important;
+      z-index: 99999 !important;
       background-color: #4F46E5 !important;
       color: white !important;
       padding: 0.75rem 1.5rem !important;
@@ -33,14 +35,19 @@
       font-weight: 600 !important;
       text-align: center !important;
       white-space: nowrap !important;
-      display: block !important;
+      display: inline-block !important;
       width: auto !important;
       height: auto !important;
       overflow: hidden !important;
-      clip: rect(1px, 1px, 1px, 1px) !important;
+      clip: rect(0 0 0 0) !important;
+      clip-path: inset(50%) !important;
+      border: 0 !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
-    
-    /* Show on keyboard focus only */
+
+    /* Show on keyboard focus only (appear visually and be keyboard-operable) */
     .skip-to-main:focus {
       position: fixed !important;
       top: 0 !important;
@@ -48,9 +55,14 @@
       right: 0 !important;
       width: 100% !important;
       clip: auto !important;
+      clip-path: none !important;
       overflow: visible !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
       outline: 2px solid white !important;
       outline-offset: 2px !important;
+      transform: translateY(0) !important;
     }
 
     /* Ensure navbar is always visible - fallback if Tailwind doesn't load */
