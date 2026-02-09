@@ -74,7 +74,7 @@ function initNavbar() {
 
   // Create navbar element
   const navbar = createElement('nav', {
-    className: 'bg-gradient-to-r from-indigo-600 to-slate-900 text-white shadow-lg sticky top-0 z-50',
+    className: 'bg-gradient-to-r from-indigo-600 to-slate-900 text-white shadow-lg sticky top-0 z-50 m-0',
     role: 'navigation',
     'aria-label': 'Main navigation'
   });
