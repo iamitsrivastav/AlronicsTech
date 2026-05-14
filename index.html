@@ -70,11 +70,44 @@
       outline: 2px solid white;
       outline-offset: 2px;
     }
+
+    /* ===== CRITICAL: Early Theme Initialization (prevent color flash) ===== */
+    /* This must run BEFORE Tailwind loads to prevent flashing wrong colors */
+    html:not([data-theme]) {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f5f7fa;
+      --bg-tertiary: #eff2f5;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-tertiary: #64748b;
+      --border-color: #e2e8f0;
+      --navbar-bg: linear-gradient(to right, #4f46e5, #1e293b);
+      --hero-gradient: linear-gradient(to bottom right, #4f46e5 0%, #4f46e5 50%, #1e293b 100%);
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --accent-light: #f0f9ff;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    }
   </style>
+
   <!-- ===== Lottie Animation Player ===== -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- ===== THEME INITIALIZATION SCRIPT (runs before page renders) ===== -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 </head>
-<body class="bg-slate-50">
+<body style="background-color: var(--bg-primary); color: var(--text-primary);">
   <!-- Skip to main content link for accessibility - WCAG compliant -->
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
 

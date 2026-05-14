@@ -1,6 +1,6 @@
 /**
  * Navbar Component - Production-Ready Navigation
- * 
+ *
  * Features:
  * - Mobile-responsive (desktop flex, mobile hamburger)
  * - Active page state highlighting
@@ -8,7 +8,72 @@
  * - Smooth animations
  * - No external dependencies
  * - Works on GitHub Pages with subdirectory hosting
+ * - Dark/Light theme toggle with localStorage persistence
  */
+
+// ===== EARLY THEME INITIALIZATION (Before DOM Load) =====
+(function() {
+  try {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', initialTheme);
+  } catch (e) {
+    // Fallback if localStorage is not available
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+
+// ===== THEME MANAGEMENT FUNCTIONS =====
+function initTheme() {
+  // Ensure theme is set (may already be set by early initialization above)
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme');
+
+  if (!currentTheme) {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    setTheme(theme);
+  } else {
+    // Update meta theme-color based on current theme
+    updateMetaTheme(currentTheme);
+  }
+}
+
+function setTheme(theme) {
+  const html = document.documentElement;
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  updateMetaTheme(theme);
+
+  // Dispatch custom event so other scripts can react
+  window.dispatchEvent(new CustomEvent('themeChange', { detail: { theme } }));
+}
+
+function updateMetaTheme(theme) {
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  if (metaThemeColor) {
+    metaThemeColor.setAttribute('content', theme === 'dark' ? '#312e81' : '#4f46e5');
+  }
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme') || 'light';
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  setTheme(newTheme);
+
+  console.log('Theme switched to:', newTheme);
+}
+
+// Initialize theme on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTheme);
+} else {
+  initTheme();
+}
+
 
 function initNavbar() {
   // Configuration
@@ -115,7 +180,7 @@ function initNavbar() {
   const desktopSocial = createElement('div', {
     className: 'flex gap-3 ml-4'
   });
-  
+
   const youtubeLink = createElement('a', {
     href: config.youtubeUrl,
     target: '_blank',
@@ -124,7 +189,7 @@ function initNavbar() {
     'aria-label': 'YouTube'
   }, '▶');
   desktopSocial.appendChild(youtubeLink);
-  
+
   const instagramLink = createElement('a', {
     href: config.instagramUrl,
     target: '_blank',
@@ -133,7 +198,7 @@ function initNavbar() {
     'aria-label': 'Instagram'
   }, '📷');
   desktopSocial.appendChild(instagramLink);
-  
+
   const twitterLink = createElement('a', {
     href: config.twitterUrl,
     target: '_blank',
@@ -142,8 +207,21 @@ function initNavbar() {
     'aria-label': 'X (Twitter)'
   }, '𝕏');
   desktopSocial.appendChild(twitterLink);
-  
+
   desktopMenu.appendChild(desktopSocial);
+
+  // Theme toggle button (desktop) - Enhanced with animated icons
+  const desktopThemeBtn = createElement('button', {
+    className: 'theme-toggle ml-3',
+    'aria-label': 'Toggle dark/light mode',
+    id: 'theme-toggle-desktop',
+    innerHTML: `
+      <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
+      <span class="theme-toggle-icon theme-toggle-sun">☀️</span>
+    `
+  });
+  desktopThemeBtn.addEventListener('click', toggleTheme);
+  desktopMenu.appendChild(desktopThemeBtn);
 
   // Subscribe button (desktop)
   const desktopSubscribeBtn = createElement('a', {
@@ -170,6 +248,24 @@ function initNavbar() {
   }, config.logoMobile);
   mobileContainer.appendChild(mobileLogo);
 
+  // Mobile controls container (theme toggle + hamburger)
+  const mobileControls = createElement('div', {
+    className: 'flex gap-2 items-center'
+  });
+
+  // Theme toggle button (mobile) - Enhanced with animated icons
+  const mobileThemeBtn = createElement('button', {
+    className: 'theme-toggle md:hidden',
+    'aria-label': 'Toggle dark/light mode',
+    id: 'theme-toggle-mobile',
+    innerHTML: `
+      <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
+      <span class="theme-toggle-icon theme-toggle-sun">☀️</span>
+    `
+  });
+  mobileThemeBtn.addEventListener('click', toggleTheme);
+  mobileControls.appendChild(mobileThemeBtn);
+
   // Hamburger button
   const hamburger = createElement('button', {
     className: 'md:hidden p-2 rounded-lg hover:bg-indigo-500 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-cyan-400',
@@ -178,7 +274,8 @@ function initNavbar() {
     id: 'menu-toggle',
     innerHTML: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>'
   });
-  mobileContainer.appendChild(hamburger);
+  mobileControls.appendChild(hamburger);
+  mobileContainer.appendChild(mobileControls);
   navbar.appendChild(mobileContainer);
 
   // Mobile menu (hidden by default)
@@ -201,12 +298,12 @@ function initNavbar() {
       } focus:outline-2 focus:outline-offset-2 focus:outline-cyan-400`,
       'aria-current': isActive ? 'page' : 'false'
     }, link.label);
-    
+
     // Close menu when link clicked
     linkEl.addEventListener('click', () => {
       toggleMobileMenu(hamburger, mobileMenu, false);
     });
-    
+
     mobileMenu.appendChild(linkEl);
   });
 
@@ -214,16 +311,16 @@ function initNavbar() {
   const mobileSocialSection = createElement('div', {
     className: 'pt-3 border-t border-indigo-500'
   });
-  
+
   const mobileSocialLabel = createElement('div', {
     className: 'px-4 py-2 text-xs font-semibold text-slate-300 uppercase'
   }, 'Follow Us');
   mobileSocialSection.appendChild(mobileSocialLabel);
-  
+
   const mobileSocialLinks = createElement('div', {
     className: 'flex gap-3 px-4 py-2'
   });
-  
+
   const mobileYoutubeLink = createElement('a', {
     href: config.youtubeUrl,
     target: '_blank',
@@ -232,7 +329,7 @@ function initNavbar() {
     'aria-label': 'YouTube'
   }, '▶');
   mobileSocialLinks.appendChild(mobileYoutubeLink);
-  
+
   const mobileInstagramLink = createElement('a', {
     href: config.instagramUrl,
     target: '_blank',
@@ -241,7 +338,7 @@ function initNavbar() {
     'aria-label': 'Instagram'
   }, '📷');
   mobileSocialLinks.appendChild(mobileInstagramLink);
-  
+
   const mobileTwitterLink = createElement('a', {
     href: config.twitterUrl,
     target: '_blank',
@@ -250,14 +347,14 @@ function initNavbar() {
     'aria-label': 'X (Twitter)'
   }, '𝕏');
   mobileSocialLinks.appendChild(mobileTwitterLink);
-  
+
   const mobileEmailLink = createElement('a', {
     href: `mailto:${config.email}`,
     className: 'text-white hover:text-orange-400 transition-colors text-2xl',
     'aria-label': 'Email us'
   }, '✉️');
   mobileSocialLinks.appendChild(mobileEmailLink);
-  
+
   mobileSocialSection.appendChild(mobileSocialLinks);
   mobileMenu.appendChild(mobileSocialSection);
 
