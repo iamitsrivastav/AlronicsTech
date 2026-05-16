@@ -67,6 +67,9 @@
   <!-- ===== Navbar ===== -->
   <script src="./assets/js/navbar.js"></script>
 
+  <!-- ===== Scroll Animations ===== -->
+  <script src="./assets/js/scroll-animations.js"></script>
+
   <!-- ===== Page Header ===== -->
   <header class="bg-gradient-to-r from-indigo-600 to-slate-900 text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,263 +109,293 @@
     </div>
 
     <!-- ===== Projects Grid ===== -->
-    <div id="projects-grid" class="grid md:grid-cols-2 gap-8 mb-16">
+    <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 scroll-reveal-stagger">
       <!-- Project 1 -->
-      <div class="project-card card-hover" data-difficulty="beginner">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-2xl font-bold">Obstacle Avoidance Robot</h3>
-            <p class="text-gray-600 text-sm mt-1">Learn sensor integration & motor control</p>
-          </div>
-          <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ml-4">
-            🟢 Beginner
-          </span>
-        </div>
-        
-        <div class="flex items-center gap-2 mb-4">
-          <span class="text-2xl">🤖</span>
-          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-            Robotics
-          </span>
+      <div class="project-card-modern scroll-reveal-scale" data-difficulty="beginner">
+        <!-- Project Image -->
+        <div class="project-card-image">
+          <div class="w-full h-full flex items-center justify-center text-5xl">🤖</div>
         </div>
 
-        <p class="text-gray-700 mb-6">
-          Build a robot that detects obstacles using an ultrasonic sensor and automatically navigates around them. Perfect for beginners to learn basic robotics principles.
+        <!-- Header -->
+        <div class="flex items-start justify-between mb-3">
+          <div class="flex-1">
+            <h3 class="text-xl font-bold leading-tight">Obstacle Avoidance Robot</h3>
+          </div>
+          <span class="difficulty-badge beginner ml-2">🟢 Beginner</span>
+        </div>
+
+        <p class="text-xs font-medium text-indigo-600 mb-3 dark:text-indigo-400">Sensor Integration · Motor Control</p>
+
+        <!-- Category Tag -->
+        <div class="flex gap-2 mb-4">
+          <span class="tech-tag">Robotics</span>
+          <span class="tech-tag">Arduino</span>
+        </div>
+
+        <!-- Description -->
+        <p class="text-sm mb-4 flex-grow">
+          Build a robot that detects obstacles using ultrasonic sensors and automatically navigates around them. Perfect for beginners learning robotics fundamentals.
         </p>
 
-        <div class="space-y-2 mb-6">
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+        <!-- Stats -->
+        <div class="space-y-2 mb-6 text-xs">
+          <div class="flex items-center gap-2">
             <span>⏱️</span>
-            <span>2-3 hours build time</span>
+            <span>2-3 hours</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>💰</span>
-            <span>$50-100 USD</span>
+            <span>$50-100</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>🔧</span>
-            <span>Raspberry Pi or Arduino</span>
+            <span>5-8 components</span>
           </div>
         </div>
 
-        <a href="/blog/robotics/obstacle.html" class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center">
-          View Full Project
-        </a>
+        <!-- Buttons -->
+        <div class="project-card-buttons">
+          <a href="/blog/robotics/obstacle.html" class="project-btn project-btn-primary">
+            View
+          </a>
+          <button class="project-btn project-btn-secondary" onclick="alert('Documentation coming soon')">
+            Docs
+          </button>
+          <button class="project-btn project-btn-outline" onclick="alert('Code on GitHub')">
+            Code
+          </button>
+        </div>
       </div>
 
       <!-- Project 2 -->
-      <div class="project-card card-hover" data-difficulty="intermediate">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-2xl font-bold">Line Following Robot</h3>
-            <p class="text-gray-600 text-sm mt-1">Master sensor calibration & control logic</p>
-          </div>
-          <span class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ml-4">
-            🟡 Intermediate
-          </span>
+      <div class="project-card-modern scroll-reveal-scale" data-difficulty="intermediate">
+        <div class="project-card-image">
+          <div class="w-full h-full flex items-center justify-center text-5xl">➡️</div>
         </div>
         
-        <div class="flex items-center gap-2 mb-4">
-          <span class="text-2xl">➡️</span>
-          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-            Robotics
-          </span>
+        <div class="flex items-start justify-between mb-3">
+          <div class="flex-1">
+            <h3 class="text-xl font-bold leading-tight">Line Following Robot</h3>
+          </div>
+          <span class="difficulty-badge intermediate ml-2">🟡 Intermediate</span>
         </div>
 
-        <p class="text-gray-700 mb-6">
-          Create a robot that follows a black line using infrared sensors. Learn advanced sensor calibration, PID control, and optimization techniques.
+        <p class="text-xs font-medium text-amber-600 mb-3 dark:text-amber-400">Sensor Calibration · PID Control</p>
+
+        <div class="flex gap-2 mb-4">
+          <span class="tech-tag">Robotics</span>
+          <span class="tech-tag">Sensors</span>
+        </div>
+
+        <p class="text-sm mb-4 flex-grow">
+          Create a robot that follows black lines using infrared sensors. Master advanced calibration and PID control algorithms for precise movements.
         </p>
 
-        <div class="space-y-2 mb-6">
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+        <div class="space-y-2 mb-6 text-xs">
+          <div class="flex items-center gap-2">
             <span>⏱️</span>
-            <span>3-4 hours build time</span>
+            <span>3-4 hours</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>💰</span>
-            <span>$60-120 USD</span>
+            <span>$60-120</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>🔧</span>
-            <span>Arduino or Raspberry Pi</span>
+            <span>8-12 components</span>
           </div>
         </div>
 
-        <button class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center cursor-not-allowed opacity-60">
-          Coming Soon
-        </button>
+        <div class="project-card-buttons">
+          <button class="project-btn project-btn-primary opacity-60 cursor-not-allowed">
+            Coming Soon
+          </button>
+        </div>
       </div>
 
       <!-- Project 3 -->
-      <div class="project-card card-hover" data-difficulty="beginner">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-2xl font-bold">Smart Temperature Monitor</h3>
-            <p class="text-gray-600 text-sm mt-1">Build your first IoT device</p>
-          </div>
-          <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ml-4">
-            🟢 Beginner
-          </span>
-        </div>
-        
-        <div class="flex items-center gap-2 mb-4">
-          <span class="text-2xl">🌡️</span>
-          <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-            IoT
-          </span>
+      <div class="project-card-modern scroll-reveal-scale" data-difficulty="beginner">
+        <div class="project-card-image">
+          <div class="w-full h-full flex items-center justify-center text-5xl">🌡️</div>
         </div>
 
-        <p class="text-gray-700 mb-6">
-          Create a WiFi-enabled temperature and humidity monitor with real-time data logging to the cloud. Perfect for learning IoT fundamentals.
+        <div class="flex items-start justify-between mb-3">
+          <div class="flex-1">
+            <h3 class="text-xl font-bold leading-tight">Smart Temperature Monitor</h3>
+          </div>
+          <span class="difficulty-badge beginner ml-2">🟢 Beginner</span>
+        </div>
+
+        <p class="text-xs font-medium text-cyan-600 mb-3 dark:text-cyan-400">IoT · Cloud Integration</p>
+
+        <div class="flex gap-2 mb-4">
+          <span class="tech-tag">IoT</span>
+          <span class="tech-tag">ESP32</span>
+        </div>
+
+        <p class="text-sm mb-4 flex-grow">
+          Create a WiFi-enabled temperature monitor with real-time cloud logging. Perfect for learning IoT fundamentals and cloud integration.
         </p>
 
-        <div class="space-y-2 mb-6">
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+        <div class="space-y-2 mb-6 text-xs">
+          <div class="flex items-center gap-2">
             <span>⏱️</span>
-            <span>2 hours build time</span>
+            <span>2 hours</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>💰</span>
-            <span>$30-50 USD</span>
+            <span>$30-50</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>🔧</span>
-            <span>ESP8266 or ESP32</span>
+            <span>4-6 components</span>
           </div>
         </div>
 
-        <button class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center cursor-not-allowed opacity-60">
-          Coming Soon
-        </button>
+        <div class="project-card-buttons">
+          <button class="project-btn project-btn-primary opacity-60 cursor-not-allowed">
+            Coming Soon
+          </button>
+        </div>
       </div>
 
       <!-- Project 4 -->
-      <div class="project-card card-hover" data-difficulty="advanced">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-2xl font-bold">Image Recognition AI</h3>
-            <p class="text-gray-600 text-sm mt-1">Implement machine learning</p>
-          </div>
-          <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ml-4">
-            🔴 Advanced
-          </span>
-        </div>
-        
-        <div class="flex items-center gap-2 mb-4">
-          <span class="text-2xl">🤖</span>
-          <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
-            AI & ML
-          </span>
+      <div class="project-card-modern scroll-reveal-scale" data-difficulty="advanced">
+        <div class="project-card-image">
+          <div class="w-full h-full flex items-center justify-center text-5xl">🧠</div>
         </div>
 
-        <p class="text-gray-700 mb-6">
-          Build an AI model that recognizes objects in images using TensorFlow. Learn neural networks, training, and deployment on edge devices.
+        <div class="flex items-start justify-between mb-3">
+          <div class="flex-1">
+            <h3 class="text-xl font-bold leading-tight">Image Recognition AI</h3>
+          </div>
+          <span class="difficulty-badge advanced ml-2">🔴 Advanced</span>
+        </div>
+
+        <p class="text-xs font-medium text-red-600 mb-3 dark:text-red-400">Machine Learning · Neural Networks</p>
+
+        <div class="flex gap-2 mb-4">
+          <span class="tech-tag">AI/ML</span>
+          <span class="tech-tag">TensorFlow</span>
+        </div>
+
+        <p class="text-sm mb-4 flex-grow">
+          Build an AI model that recognizes objects using TensorFlow. Learn neural networks, training, and deployment on edge devices.
         </p>
 
-        <div class="space-y-2 mb-6">
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+        <div class="space-y-2 mb-6 text-xs">
+          <div class="flex items-center gap-2">
             <span>⏱️</span>
             <span>4-5 hours</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>💰</span>
-            <span>$0 (software only)</span>
+            <span>$0 (free)</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>🔧</span>
-            <span>Python & TensorFlow</span>
+            <span>Software only</span>
           </div>
         </div>
 
-        <button class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center cursor-not-allowed opacity-60">
-          Coming Soon
-        </button>
+        <div class="project-card-buttons">
+          <button class="project-btn project-btn-primary opacity-60 cursor-not-allowed">
+            Coming Soon
+          </button>
+        </div>
       </div>
 
       <!-- Project 5 -->
-      <div class="project-card card-hover" data-difficulty="intermediate">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-2xl font-bold">Smart Home Light Control</h3>
-            <p class="text-gray-600 text-sm mt-1">Build IoT automation system</p>
-          </div>
-          <span class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ml-4">
-            🟡 Intermediate
-          </span>
-        </div>
-        
-        <div class="flex items-center gap-2 mb-4">
-          <span class="text-2xl">💡</span>
-          <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-            IoT
-          </span>
+      <div class="project-card-modern scroll-reveal-scale" data-difficulty="intermediate">
+        <div class="project-card-image">
+          <div class="w-full h-full flex items-center justify-center text-5xl">💡</div>
         </div>
 
-        <p class="text-gray-700 mb-6">
-          Control lights remotely using Node-RED and MQTT protocol. Learn IoT architecture and build your first smart home device.
+        <div class="flex items-start justify-between mb-3">
+          <div class="flex-1">
+            <h3 class="text-xl font-bold leading-tight">Smart Home Light Control</h3>
+          </div>
+          <span class="difficulty-badge intermediate ml-2">🟡 Intermediate</span>
+        </div>
+
+        <p class="text-xs font-medium text-amber-600 mb-3 dark:text-amber-400">IoT · Automation</p>
+
+        <div class="flex gap-2 mb-4">
+          <span class="tech-tag">IoT</span>
+          <span class="tech-tag">MQTT</span>
+        </div>
+
+        <p class="text-sm mb-4 flex-grow">
+          Control lights remotely using Node-RED and MQTT. Learn IoT architecture and build your first smart home automation system.
         </p>
 
-        <div class="space-y-2 mb-6">
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+        <div class="space-y-2 mb-6 text-xs">
+          <div class="flex items-center gap-2">
             <span>⏱️</span>
-            <span>3 hours build time</span>
+            <span>3 hours</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>💰</span>
-            <span>$40-70 USD</span>
+            <span>$40-70</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>🔧</span>
-            <span>Raspberry Pi + Relay</span>
+            <span>7-10 components</span>
           </div>
         </div>
 
-        <button class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center cursor-not-allowed opacity-60">
-          Coming Soon
-        </button>
+        <div class="project-card-buttons">
+          <button class="project-btn project-btn-primary opacity-60 cursor-not-allowed">
+            Coming Soon
+          </button>
+        </div>
       </div>
 
       <!-- Project 6 -->
-      <div class="project-card card-hover" data-difficulty="beginner">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-2xl font-bold">Robotic Arm with Servo</h3>
-            <p class="text-gray-600 text-sm mt-1">Control actuators & mechanics</p>
-          </div>
-          <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ml-4">
-            🟢 Beginner
-          </span>
-        </div>
-        
-        <div class="flex items-center gap-2 mb-4">
-          <span class="text-2xl">🦾</span>
-          <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-            Robotics
-          </span>
+      <div class="project-card-modern scroll-reveal-scale" data-difficulty="beginner">
+        <div class="project-card-image">
+          <div class="w-full h-full flex items-center justify-center text-5xl">🦾</div>
         </div>
 
-        <p class="text-gray-700 mb-6">
-          Build a simple robotic arm that picks up objects. Learn servo control, kinematics, and mechanical design principles.
+        <div class="flex items-start justify-between mb-3">
+          <div class="flex-1">
+            <h3 class="text-xl font-bold leading-tight">Robotic Arm with Servo</h3>
+          </div>
+          <span class="difficulty-badge beginner ml-2">🟢 Beginner</span>
+        </div>
+
+        <p class="text-xs font-medium text-indigo-600 mb-3 dark:text-indigo-400">Mechanical Design · Servo Control</p>
+
+        <div class="flex gap-2 mb-4">
+          <span class="tech-tag">Robotics</span>
+          <span class="tech-tag">Servos</span>
+        </div>
+
+        <p class="text-sm mb-4 flex-grow">
+          Build a robotic arm that picks objects. Learn servo control, kinematics, and mechanical design for robotics projects.
         </p>
 
-        <div class="space-y-2 mb-6">
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+        <div class="space-y-2 mb-6 text-xs">
+          <div class="flex items-center gap-2">
             <span>⏱️</span>
-            <span>3-4 hours build time</span>
+            <span>3-4 hours</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>💰</span>
-            <span>$40-80 USD</span>
+            <span>$40-80</span>
           </div>
-          <div class="flex items-center gap-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
             <span>🔧</span>
-            <span>Arduino + Servos</span>
+            <span>6-8 components</span>
           </div>
         </div>
 
-        <button class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center cursor-not-allowed opacity-60">
-          Coming Soon
-        </button>
+        <div class="project-card-buttons">
+          <button class="project-btn project-btn-primary opacity-60 cursor-not-allowed">
+            Coming Soon
+          </button>
+        </div>
       </div>
     </div>
 
@@ -396,47 +429,123 @@
   </main>
 
   <!-- ===== Footer ===== -->
-  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+  <footer class="footer-premium">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <h3 class="text-white font-bold text-lg mb-4">Alronics Tech</h3>
-          <p class="text-sm">
-            Educational platform for learning Robotics, IoT, and AI through hands-on projects.
-          </p>
+      <!-- Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
+        
+        <!-- Brand Section -->
+        <div class="md:col-span-1">
+          <div class="footer-brand-section">
+            <h3 class="footer-section-title text-2xl">Alronics Tech</h3>
+            <p class="footer-brand-text mb-6">
+              Empowering the next generation with hands-on STEM education through robotics, IoT, and AI.
+            </p>
+            
+            <!-- Social Links -->
+            <div class="flex gap-3">
+              <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" 
+                 class="footer-social-link" aria-label="YouTube">
+                ▶️
+              </a>
+              <a href="https://www.instagram.com/alronicstech/" target="_blank" rel="noopener noreferrer" 
+                 class="footer-social-link" aria-label="Instagram">
+                📷
+              </a>
+              <a href="https://x.com/AlronicsTech" target="_blank" rel="noopener noreferrer" 
+                 class="footer-social-link" aria-label="X (Twitter)">
+                𝕏
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                 class="footer-social-link" aria-label="GitHub">
+                💻
+              </a>
+            </div>
+          </div>
         </div>
+
+        <!-- Quick Links -->
         <div>
-          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/index.html" class="hover:text-white transition-colors">Home</a></li>
-            <li><a href="/blog.html" class="hover:text-white transition-colors">Blog</a></li>
-            <li><a href="/projects.html" class="hover:text-white transition-colors">Projects</a></li>
-            <li><a href="/resources.html" class="hover:text-white transition-colors">Resources</a></li>
+          <h4 class="footer-section-title">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="./index.html" class="footer-link">🏠 Home</a></li>
+            <li><a href="./blog.html" class="footer-link">📝 Blog</a></li>
+            <li><a href="./projects.html" class="footer-link">🔧 Projects</a></li>
+            <li><a href="./resources.html" class="footer-link">📚 Resources</a></li>
+            <li><a href="./contact.html" class="footer-link">✉️ Contact</a></li>
           </ul>
         </div>
+
+        <!-- Learning Categories -->
         <div>
-          <h4 class="text-white font-semibold mb-4">Categories</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/blog.html" class="hover:text-white transition-colors">Robotics</a></li>
-            <li><a href="/blog.html" class="hover:text-white transition-colors">IoT</a></li>
-            <li><a href="/blog.html" class="hover:text-white transition-colors">AI & ML</a></li>
-            <li><a href="/blog.html" class="hover:text-white transition-colors">Raspberry Pi</a></li>
+          <h4 class="footer-section-title">Categories</h4>
+          <ul class="space-y-3">
+            <li><a href="./blog.html" class="footer-link">🤖 Robotics</a></li>
+            <li><a href="./blog.html" class="footer-link">📡 IoT</a></li>
+            <li><a href="./blog.html" class="footer-link">🧠 AI & ML</a></li>
+            <li><a href="./blog.html" class="footer-link">🍓 Raspberry Pi</a></li>
+            <li><a href="./blog.html" class="footer-link">🖨️ 3D Printing</a></li>
           </ul>
         </div>
+
+        <!-- Resources & Info -->
         <div>
-          <h4 class="text-white font-semibold mb-4">Connect</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 transition-colors">▶ YouTube</a></li>
-            <li><a href="https://www.instagram.com/alronicstech/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 transition-colors">📷 Instagram</a></li>
-            <li><a href="https://x.com/AlronicsTech" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 transition-colors">𝕏 X (Twitter)</a></li>
-            <li><a href="mailto:alronicstech@gmail.com" class="hover:text-orange-400 transition-colors">✉️ Email</a></li>
-            <li><a href="./contact.html" class="hover:text-orange-400 transition-colors">💬 Contact Form</a></li>
+          <h4 class="footer-section-title">Resources</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="footer-link">📖 Documentation</a></li>
+            <li><a href="#" class="footer-link">🎓 Learning Paths</a></li>
+            <li><a href="#" class="footer-link">🐛 FAQ</a></li>
+            <li><a href="./about.html" class="footer-link">ℹ️ About Us</a></li>
+            <li><a href="#" class="footer-link">💼 Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect -->
+        <div>
+          <h4 class="footer-section-title">Get in Touch</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:alronicstech@gmail.com" class="footer-link">
+                📧 Email Us
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                💬 Discord Community
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                🎥 YouTube Channel
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                📰 Newsletter
+              </a>
+            </li>
           </ul>
         </div>
       </div>
-      <hr class="border-gray-700 mb-8">
-      <div class="text-center text-sm">
-        <p>&copy; 2026 Alronics Tech. All rights reserved.</p>
+
+      <!-- Divider -->
+      <div class="border-t footer-divider mb-8"></div>
+
+      <!-- Footer Bottom -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <!-- Copyright -->
+        <div>
+          <p class="text-sm" style="color: var(--text-secondary);">
+            &copy; 2026 Alronics Tech. All rights reserved. | Made with ❤️ for STEM education
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-wrap gap-6 text-sm">
+          <a href="#" class="footer-link">🔒 Privacy Policy</a>
+          <a href="#" class="footer-link">⚖️ Terms of Service</a>
+          <a href="#" class="footer-link">🍪 Cookie Policy</a>
+        </div>
       </div>
     </div>
   </footer>

@@ -84,6 +84,9 @@
   <!-- ===== Navbar ===== -->
   <script src="../../assets/js/navbar.js"></script>
 
+  <!-- ===== Scroll Animations ===== -->
+  <script src="../../assets/js/scroll-animations.js"></script>
+
   <!-- ===== Article Header ===== -->
   <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-12">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -652,39 +655,123 @@
   </main>
 
   <!-- ===== Footer ===== -->
-  <footer class="bg-gray-900 text-gray-300 py-12">
+  <footer class="footer-premium">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <h3 class="text-white font-bold text-lg mb-4">Alronics Tech</h3>
-          <p class="text-sm">Educational tech platform for learning Robotics, IoT, and AI.</p>
+      <!-- Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
+        
+        <!-- Brand Section -->
+        <div class="md:col-span-1">
+          <div class="footer-brand-section">
+            <h3 class="footer-section-title text-2xl">Alronics Tech</h3>
+            <p class="footer-brand-text mb-6">
+              Empowering the next generation with hands-on STEM education through robotics, IoT, and AI.
+            </p>
+            
+            <!-- Social Links -->
+            <div class="flex gap-3">
+              <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" 
+                 class="footer-social-link" aria-label="YouTube">
+                ▶️
+              </a>
+              <a href="https://www.instagram.com/alronicstech/" target="_blank" rel="noopener noreferrer" 
+                 class="footer-social-link" aria-label="Instagram">
+                📷
+              </a>
+              <a href="https://x.com/AlronicsTech" target="_blank" rel="noopener noreferrer" 
+                 class="footer-social-link" aria-label="X (Twitter)">
+                𝕏
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                 class="footer-social-link" aria-label="GitHub">
+                💻
+              </a>
+            </div>
+          </div>
         </div>
+
+        <!-- Quick Links -->
         <div>
-          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/index.html" class="hover:text-white">Home</a></li>
-            <li><a href="/blog.html" class="hover:text-white">Blog</a></li>
-            <li><a href="/resources.html" class="hover:text-white">Resources</a></li>
+          <h4 class="footer-section-title">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="../../index.html" class="footer-link">🏠 Home</a></li>
+            <li><a href="../../blog.html" class="footer-link">📝 Blog</a></li>
+            <li><a href="../../projects.html" class="footer-link">🔧 Projects</a></li>
+            <li><a href="../../resources.html" class="footer-link">📚 Resources</a></li>
+            <li><a href="../../contact.html" class="footer-link">✉️ Contact</a></li>
           </ul>
         </div>
+
+        <!-- Learning Categories -->
         <div>
-          <h4 class="text-white font-semibold mb-4">Categories</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/blog.html" class="hover:text-white">Robotics</a></li>
-            <li><a href="/blog.html" class="hover:text-white">IoT</a></li>
-            <li><a href="/blog.html" class="hover:text-white">AI & ML</a></li>
+          <h4 class="footer-section-title">Categories</h4>
+          <ul class="space-y-3">
+            <li><a href="../../blog.html" class="footer-link">🤖 Robotics</a></li>
+            <li><a href="../../blog.html" class="footer-link">📡 IoT</a></li>
+            <li><a href="../../blog.html" class="footer-link">🧠 AI & ML</a></li>
+            <li><a href="../../blog.html" class="footer-link">🍓 Raspberry Pi</a></li>
+            <li><a href="../../blog.html" class="footer-link">🖨️ 3D Printing</a></li>
           </ul>
         </div>
+
+        <!-- Resources & Info -->
         <div>
-          <h4 class="text-white font-semibold mb-4">Connect</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="hover:text-white">▶ YouTube</a></li>
-            <li><a href="/contact.html" class="hover:text-white">✉️ Contact</a></li>
+          <h4 class="footer-section-title">Resources</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="footer-link">📖 Documentation</a></li>
+            <li><a href="#" class="footer-link">🎓 Learning Paths</a></li>
+            <li><a href="#" class="footer-link">🐛 FAQ</a></li>
+            <li><a href="../../about.html" class="footer-link">ℹ️ About Us</a></li>
+            <li><a href="#" class="footer-link">💼 Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect -->
+        <div>
+          <h4 class="footer-section-title">Get in Touch</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:alronicstech@gmail.com" class="footer-link">
+                📧 Email Us
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                💬 Discord Community
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                🎥 YouTube Channel
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                📰 Newsletter
+              </a>
+            </li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 pt-8 text-center text-sm">
-        <p>&copy; 2026 Alronics Tech. All rights reserved.</p>
+
+      <!-- Divider -->
+      <div class="border-t footer-divider mb-8"></div>
+
+      <!-- Footer Bottom -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <!-- Copyright -->
+        <div>
+          <p class="text-sm" style="color: var(--text-secondary);">
+            &copy; 2026 Alronics Tech. All rights reserved. | Made with ❤️ for STEM education
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-wrap gap-6 text-sm">
+          <a href="#" class="footer-link">🔒 Privacy Policy</a>
+          <a href="#" class="footer-link">⚖️ Terms of Service</a>
+          <a href="#" class="footer-link">🍪 Cookie Policy</a>
+        </div>
       </div>
     </div>
   </footer>
