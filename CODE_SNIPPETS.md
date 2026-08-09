@@ -34,7 +34,7 @@ Quick reference for common tasks on Alronics Tech website.
 <!-- Previous/Next navigation -->
 <a href="/blog/robotics/obstacle.html" class="group">
   <span class="text-sm text-gray-600">← Previous Project</span>
-  <h3 class="text-lg font-bold group-hover:text-blue-600">Obstacle Avoidance</h3>
+  <h3 class="text-lg font-bold hover-text-accent">Obstacle Avoidance</h3>
 </a>
 ```
 
@@ -45,19 +45,19 @@ Quick reference for common tasks on Alronics Tech website.
 ### Alert/Info Box
 ```html
 <!-- Blue info box -->
-<div class="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-6">
+<div class="tile-neutral border-l-4 border-accent rounded-lg p-6">
   <h3 class="font-bold text-lg mb-4">💡 Pro Tip</h3>
   <p class="text-gray-700">Your tip or important information here</p>
 </div>
 
 <!-- Yellow warning box -->
-<div class="bg-yellow-50 border-l-4 border-yellow-600 rounded-lg p-6">
+<div class="tile-neutral border-l-4 border-accent rounded-lg p-6">
   <h3 class="font-bold text-lg mb-4">⚠️ Warning</h3>
   <p class="text-gray-700">Your warning here</p>
 </div>
 
 <!-- Green success box -->
-<div class="bg-green-50 border-l-4 border-green-600 rounded-lg p-6">
+<div class="tile-neutral border-l-4 border-accent rounded-lg p-6">
   <h3 class="font-bold text-lg mb-4">✅ Success</h3>
   <p class="text-gray-700">Your success message here</p>
 </div>
@@ -474,7 +474,7 @@ motor_pwm.stop()
 <meta name="description" content="Brief description (155-160 chars)">
 <meta name="keywords" content="keyword1, keyword2, keyword3">
 <meta name="author" content="Alronics Tech">
-<meta name="theme-color" content="#2563eb">
+<meta name="theme-color" content="#00203F">
 
 <!-- Open Graph (Social Media) -->
 <meta property="og:type" content="article">

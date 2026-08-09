@@ -7,7 +7,7 @@
   <meta name="description" content="Alronics Tech Projects - Browse complete robotics, IoT, and AI projects with code, schematics, and tutorials.">
   <meta name="keywords" content="robotics projects, IoT projects, AI projects, electronics, maker projects, STEM">
   <meta name="author" content="Alronics Tech">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#36ECDE">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects | Alronics Tech">
   <meta property="og:description" content="Complete robotics and IoT projects with full documentation">
@@ -26,8 +26,8 @@
       position: absolute !important;
       left: -9999px !important;
       z-index: 9999 !important;
-      background-color: #4F46E5 !important;
-      color: white !important;
+      background-color: #00203F !important;
+      color: #FFFFFF !important;
       padding: 0.75rem 1.5rem !important;
       text-decoration: none !important;
       font-weight: 600 !important;
@@ -71,17 +71,17 @@
   <script src="./assets/js/scroll-animations.js"></script>
 
   <!-- ===== Page Header ===== -->
-  <header class="bg-gradient-to-r from-indigo-600 to-slate-900 text-white py-16">
+  <header class="page-hero text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center gap-2 text-sm text-blue-100">
+        <ol class="flex items-center gap-2 text-sm" style="color:var(--text-muted)">
           <li><a href="./index.html" class="hover:text-white">Home</a></li>
-          <li>/</li>
-          <li aria-current="page" class="text-white font-medium">Projects</li>
+          <li style="color:var(--text-muted)">/</li>
+          <li aria-current="page" style="color:var(--accent-primary);" class="font-medium">Projects</li>
         </ol>
       </nav>
       <h1 class="text-5xl font-bold mb-4">Featured Projects</h1>
-      <p class="text-xl text-blue-100">
+      <p class="text-xl text-accent-light">
         Complete robotics and IoT projects with full documentation, code, and step-by-step guides.
       </p>
     </div>
@@ -93,16 +93,14 @@
     <div class="mb-12">
       <h2 class="text-3xl font-bold mb-6">Filter by Difficulty</h2>
       <div class="flex flex-wrap gap-3">
-        <button class="difficulty-filter-btn active px-6 py-2 rounded-full border-2 border-blue-600 bg-blue-600 text-white font-medium transition-all" data-difficulty="all">
-          All Levels
-        </button>
-        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-green-300 text-green-700 font-medium hover:border-green-600 hover:bg-green-50 transition-all" data-difficulty="beginner">
+        <button class="difficulty-filter-btn active btn-base btn-primary" data-difficulty="all">All Levels</button>
+        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-neutral text-muted font-medium hover:border-accent transition-all" data-difficulty="beginner">
           🟢 Beginner
         </button>
-        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-yellow-300 text-yellow-700 font-medium hover:border-yellow-600 hover:bg-yellow-50 transition-all" data-difficulty="intermediate">
+        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-neutral text-muted font-medium hover:border-accent transition-all" data-difficulty="intermediate">
           🟡 Intermediate
         </button>
-        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-red-300 text-red-700 font-medium hover:border-red-600 hover:bg-red-50 transition-all" data-difficulty="advanced">
+        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-neutral text-muted font-medium hover:border-accent transition-all" data-difficulty="advanced">
           🔴 Advanced
         </button>
       </div>
@@ -125,7 +123,7 @@
           <span class="difficulty-badge beginner ml-2">🟢 Beginner</span>
         </div>
 
-        <p class="text-xs font-medium text-indigo-600 mb-3 dark:text-indigo-400">Sensor Integration · Motor Control</p>
+        <p class="text-xs font-medium text-accent mb-3 dark:text-indigo-400">Sensor Integration · Motor Control</p>
 
         <!-- Category Tag -->
         <div class="flex gap-2 mb-4">
@@ -181,7 +179,7 @@
           <span class="difficulty-badge intermediate ml-2">🟡 Intermediate</span>
         </div>
 
-        <p class="text-xs font-medium text-amber-600 mb-3 dark:text-amber-400">Sensor Calibration · PID Control</p>
+        <p class="text-xs font-medium text-accent mb-3 dark:text-amber-400">Sensor Calibration · PID Control</p>
 
         <div class="flex gap-2 mb-4">
           <span class="tech-tag">Robotics</span>
@@ -227,7 +225,7 @@
           <span class="difficulty-badge beginner ml-2">🟢 Beginner</span>
         </div>
 
-        <p class="text-xs font-medium text-cyan-600 mb-3 dark:text-cyan-400">IoT · Cloud Integration</p>
+        <p class="text-xs font-medium text-accent mb-3 dark:text-cyan-400">IoT · Cloud Integration</p>
 
         <div class="flex gap-2 mb-4">
           <span class="tech-tag">IoT</span>
@@ -273,7 +271,7 @@
           <span class="difficulty-badge advanced ml-2">🔴 Advanced</span>
         </div>
 
-        <p class="text-xs font-medium text-red-600 mb-3 dark:text-red-400">Machine Learning · Neural Networks</p>
+        <p class="text-xs font-medium text-accent mb-3 dark:text-red-400">Machine Learning · Neural Networks</p>
 
         <div class="flex gap-2 mb-4">
           <span class="tech-tag">AI/ML</span>
@@ -319,7 +317,7 @@
           <span class="difficulty-badge intermediate ml-2">🟡 Intermediate</span>
         </div>
 
-        <p class="text-xs font-medium text-amber-600 mb-3 dark:text-amber-400">IoT · Automation</p>
+        <p class="text-xs font-medium text-accent mb-3 dark:text-amber-400">IoT · Automation</p>
 
         <div class="flex gap-2 mb-4">
           <span class="tech-tag">IoT</span>
@@ -365,7 +363,7 @@
           <span class="difficulty-badge beginner ml-2">🟢 Beginner</span>
         </div>
 
-        <p class="text-xs font-medium text-indigo-600 mb-3 dark:text-indigo-400">Mechanical Design · Servo Control</p>
+        <p class="text-xs font-medium text-accent mb-3 dark:text-indigo-400">Mechanical Design · Servo Control</p>
 
         <div class="flex gap-2 mb-4">
           <span class="tech-tag">Robotics</span>
@@ -401,30 +399,25 @@
 
     <!-- ===== Project Stats ===== -->
     <div class="grid md:grid-cols-3 gap-6 mb-16">
-      <div class="bg-blue-50 rounded-lg p-6 text-center border border-blue-200">
-        <div class="text-4xl font-bold text-blue-600 mb-2">6+</div>
-        <p class="text-gray-700">Complete Projects</p>
+      <div class="tile-neutral rounded-lg p-6 text-center border">
+        <div class="text-4xl font-bold text-accent mb-2">6+</div>
+        <p class="text-secondary">Complete Projects</p>
       </div>
-      <div class="bg-green-50 rounded-lg p-6 text-center border border-green-200">
-        <div class="text-4xl font-bold text-green-600 mb-2">100+</div>
-        <p class="text-gray-700">Code Examples</p>
+      <div class="tile-neutral rounded-lg p-6 text-center border">
+        <div class="text-4xl font-bold text-accent mb-2">100+</div>
+        <p class="text-secondary">Code Examples</p>
       </div>
-      <div class="bg-purple-50 rounded-lg p-6 text-center border border-purple-200">
-        <div class="text-4xl font-bold text-purple-600 mb-2">100%</div>
-        <p class="text-gray-700">Free & Open Source</p>
+      <div class="tile-neutral rounded-lg p-6 text-center border">
+        <div class="text-4xl font-bold text-accent mb-2">100%</div>
+        <p class="text-secondary">Free & Open Source</p>
       </div>
     </div>
 
     <!-- ===== CTA Section ===== -->
-    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg p-8 text-center">
+    <div class="cta-dark rounded-lg p-8 text-center">
       <h2 class="text-3xl font-bold mb-4">Ready to Build?</h2>
-      <p class="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
-        Watch step-by-step video tutorials on our YouTube channel. Subscribe for new project releases every week.
-      </p>
-      <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer"
-         class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-block">
-        ▶ Watch Tutorials on YouTube
-      </a>
+      <p class="text-lg mb-6 max-w-2xl mx-auto" style="color:var(--text-secondary)">Watch step-by-step video tutorials on our YouTube channel. Subscribe for new project releases every week.</p>
+      <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="btn-base btn-primary">▶ Watch Tutorials on YouTube</a>
     </div>
   </main>
 
@@ -561,11 +554,11 @@
 
         // Update active button
         filterButtons.forEach(btn => {
-          btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
-          btn.classList.add('border-gray-300', 'text-gray-700');
+          btn.classList.remove('btn-primary');
+          btn.classList.add('border-neutral', 'text-muted');
         });
-        this.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
-        this.classList.remove('border-gray-300', 'text-gray-700');
+        this.classList.add('btn-primary');
+        this.classList.remove('border-neutral', 'text-muted');
 
         // Filter projects
         projectCards.forEach(card => {

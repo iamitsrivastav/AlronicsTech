@@ -54,7 +54,7 @@ function setTheme(theme) {
 function updateMetaTheme(theme) {
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   if (metaThemeColor) {
-    metaThemeColor.setAttribute('content', theme === 'dark' ? '#312e81' : '#4f46e5');
+    metaThemeColor.setAttribute('content', theme === 'dark' ? '#0b1220' : '#00203F');
   }
 }
 
@@ -139,7 +139,7 @@ function initNavbar() {
 
   // Create navbar element
   const navbar = createElement('nav', {
-    className: 'bg-gradient-to-r from-indigo-600 to-slate-900 text-white shadow-lg sticky top-0 z-50 m-0',
+    className: 'navbar-root sticky top-0 z-50 m-0',
     role: 'navigation',
     'aria-label': 'Main navigation'
   });
@@ -167,8 +167,8 @@ function initNavbar() {
       href: link.href,
       className: `px-4 py-2 rounded-lg transition-all font-medium text-sm ${
         isActive
-          ? 'bg-orange-500 text-white shadow-lg'
-          : 'text-slate-100 hover:bg-indigo-500 hover:text-white'
+          ? 'btn-primary'
+          : 'text-slate-100 hover:text-white'
       } focus:outline-2 focus:outline-offset-2 focus:outline-cyan-400`,
       'aria-current': isActive ? 'page' : 'false'
     }, link.label);
@@ -185,7 +185,7 @@ function initNavbar() {
     href: config.youtubeUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-orange-400 transition-colors',
+    className: 'text-white hover:text-accent-hover transition-colors',
     'aria-label': 'YouTube'
   }, '▶');
   desktopSocial.appendChild(youtubeLink);
@@ -194,7 +194,7 @@ function initNavbar() {
     href: config.instagramUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-orange-400 transition-colors',
+    className: 'text-white hover:text-accent-hover transition-colors',
     'aria-label': 'Instagram'
   }, '📷');
   desktopSocial.appendChild(instagramLink);
@@ -203,7 +203,7 @@ function initNavbar() {
     href: config.twitterUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-orange-400 transition-colors',
+    className: 'text-white hover:text-accent-hover transition-colors',
     'aria-label': 'X (Twitter)'
   }, '𝕏');
   desktopSocial.appendChild(twitterLink);
@@ -228,7 +228,7 @@ function initNavbar() {
     href: config.youtubeUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-lg transition-colors font-bold text-white shadow-lg flex-shrink-0 ml-3 text-sm',
+    className: 'btn-base btn-primary flex-shrink-0 ml-3 text-sm',
     'aria-label': 'Subscribe to our YouTube channel'
   }, '▶ Subscribe');
   desktopMenu.appendChild(desktopSubscribeBtn);
@@ -268,7 +268,7 @@ function initNavbar() {
 
   // Hamburger button
   const hamburger = createElement('button', {
-    className: 'md:hidden p-2 rounded-lg hover:bg-indigo-500 transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-cyan-400',
+    className: 'md:hidden p-2 rounded-lg hover:bg-accent-light transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-cyan-400',
     'aria-label': 'Toggle navigation menu',
     'aria-expanded': 'false',
     id: 'menu-toggle',
@@ -281,7 +281,7 @@ function initNavbar() {
   // Mobile menu (hidden by default)
   const mobileMenu = createElement('div', {
     id: 'mobile-menu',
-    className: 'md:hidden bg-indigo-700 border-t-2 border-indigo-500 px-4 sm:px-6 py-4 space-y-2 hidden max-h-0 overflow-hidden transition-all duration-300',
+    className: 'md:hidden px-4 sm:px-6 py-4 space-y-2 hidden max-h-0 overflow-hidden transition-all duration-300 mobile-menu-root',
     role: 'region',
     'aria-labelledby': 'menu-toggle'
   });
@@ -293,8 +293,8 @@ function initNavbar() {
       href: link.href,
       className: `block px-4 py-3 rounded-lg transition-all font-semibold text-sm ${
         isActive
-          ? 'bg-orange-500 text-white shadow-lg'
-          : 'text-slate-100 hover:bg-indigo-600 hover:text-white'
+          ? 'btn-primary'
+          : 'text-slate-100 hover:text-white'
       } focus:outline-2 focus:outline-offset-2 focus:outline-cyan-400`,
       'aria-current': isActive ? 'page' : 'false'
     }, link.label);
@@ -325,7 +325,7 @@ function initNavbar() {
     href: config.youtubeUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-orange-400 transition-colors text-2xl',
+    className: 'text-white hover:text-accent-hover transition-colors text-2xl',
     'aria-label': 'YouTube'
   }, '▶');
   mobileSocialLinks.appendChild(mobileYoutubeLink);
@@ -334,7 +334,7 @@ function initNavbar() {
     href: config.instagramUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-orange-400 transition-colors text-2xl',
+    className: 'text-white hover:text-accent-hover transition-colors text-2xl',
     'aria-label': 'Instagram'
   }, '📷');
   mobileSocialLinks.appendChild(mobileInstagramLink);
@@ -343,14 +343,14 @@ function initNavbar() {
     href: config.twitterUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-orange-400 transition-colors text-2xl',
+    className: 'text-white hover:text-accent-hover transition-colors text-2xl',
     'aria-label': 'X (Twitter)'
   }, '𝕏');
   mobileSocialLinks.appendChild(mobileTwitterLink);
 
   const mobileEmailLink = createElement('a', {
     href: `mailto:${config.email}`,
-    className: 'text-white hover:text-orange-400 transition-colors text-2xl',
+    className: 'text-white hover:text-accent-hover transition-colors text-2xl',
     'aria-label': 'Email us'
   }, '✉️');
   mobileSocialLinks.appendChild(mobileEmailLink);
@@ -363,7 +363,7 @@ function initNavbar() {
     href: config.youtubeUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'block w-full bg-orange-500 hover:bg-orange-600 text-center py-3 rounded-lg transition-colors font-bold text-white mt-4 shadow-lg text-sm',
+    className: 'block w-full btn-base btn-primary text-center py-3 rounded-lg font-bold mt-4 text-sm',
     'aria-label': 'Subscribe to our YouTube channel'
   }, '▶ Subscribe');
   mobileMenu.appendChild(mobileSubscribeBtn);

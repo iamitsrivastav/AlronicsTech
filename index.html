@@ -7,7 +7,7 @@
   <meta name="description" content="Alronics Tech – Learn Robotics, IoT, AI, Raspberry Pi, Scratch, and MIT App Inventor through hands-on YouTube tutorials with complete documentation.">
   <meta name="keywords" content="robotics, IoT, AI, electronics, Raspberry Pi, Scratch, MIT App Inventor, 3D printing, STEM education">
   <meta name="author" content="Alronics Tech">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#36ECDE">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Alronics Tech | Learn Robotics & IoT">
   <meta property="og:description" content="Hands-on tutorials for students learning Robotics, IoT, AI, and Electronics">
@@ -50,8 +50,8 @@
       padding: 0.75rem 1.5rem;
       margin: 0;
       border: 0;
-      background-color: #4F46E5;
-      color: white;
+      background-color: #00203F;
+      color: #FFFFFF;
       text-decoration: none;
       font-weight: 600;
       text-align: center;
@@ -73,25 +73,29 @@
 
     /* ===== CRITICAL: Early Theme Initialization (prevent color flash) ===== */
     /* This must run BEFORE Tailwind loads to prevent flashing wrong colors */
+    /* Minimal early theme tokens to avoid flash; values align with centralized design system in main.css */
     html:not([data-theme]) {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f5f7fa;
-      --bg-tertiary: #eff2f5;
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
-      --text-tertiary: #64748b;
-      --border-color: #e2e8f0;
-      --navbar-bg: linear-gradient(to right, #4f46e5, #1e293b);
-      --hero-gradient: linear-gradient(to bottom right, #4f46e5 0%, #4f46e5 50%, #1e293b 100%);
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --accent-light: #f0f9ff;
-      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+      --bg-primary: #E6E9EC;
+      --bg-secondary: #FFFFFF;
+      --bg-tertiary: #F5F7FA;
+      --text-primary: #00203F;
+      --text-secondary: #2F2F2F;
+      --text-tertiary: #4C5A6B;
+      --border-color: rgba(0, 32, 63, 0.10);
+      --navbar-bg: #00203F;
+      --hero-gradient: linear-gradient(135deg, #00203F 0%, #083b5b 36%, #0b5a67 68%, rgba(54,236,222,0.18) 100%);
+      --card-bg: #FFFFFF;
+      --card-border: rgba(0, 32, 63, 0.10);
+      --accent-light: rgba(54,236,222,0.12);
+      --shadow: 0 10px 15px -3px rgba(0, 32, 63, 0.08);
     }
   </style>
 
   <!-- ===== Lottie Animation Player ===== -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- ===== Animated Counter Script ===== -->
+  <script src="./assets/js/counter-animation.js"></script>
 
   <!-- ===== THEME INITIALIZATION SCRIPT (runs before page renders) ===== -->
   <script>
@@ -112,7 +116,7 @@
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
   <!-- ===== Hero Section ===== -->
-  <header class="relative bg-gradient-to-br from-indigo-600 via-indigo-700 to-slate-900 text-white pt-12 md:pt-16 pb-16 md:pb-28 overflow-hidden" id="main-content">
+  <header class="relative page-hero text-white pt-12 md:pt-16 pb-16 md:pb-28 overflow-hidden" id="main-content">
     <!-- Background pattern -->
     <div class="absolute inset-0 opacity-10">
       <svg class="w-full h-full" viewBox="0 0 1200 600">
@@ -135,84 +139,47 @@
           <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight heading-lg fade-up">
             Build Your Robotics & IoT Skills
           </h1>
-          <p class="text-xl text-blue-100 mb-8 leading-relaxed fade-up">
+          <p class="text-xl mb-8 leading-relaxed fade-up">
             Hands-on tutorials for Robotics, IoT, AI, Raspberry Pi, Scratch, MIT App Inventor, and 3D Printing. Perfect for students aged 10–18.
           </p>
 
           <!-- CTA Buttons -->
-          <div class="mt-8 flex flex-wrap gap-4 items-center fade-up">
+          <div class="hero-actions fade-up">
 
             <!-- Primary CTA -->
-            <a
-              href="https://www.youtube.com/@alronicstech"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group inline-flex items-center gap-3
-                     bg-orange-500 hover:bg-orange-600
-                     text-white font-semibold
-                     px-7 py-3 rounded-xl
-                     shadow-lg hover:shadow-2xl
-                     transition-all duration-300
-                     hover:-translate-y-1
-                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400"
-            >
-              <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/20">
-                ▶
-              </span>
+            <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="btn-base btn-primary">
+              <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/20">▶</span>
               Subscribe on YouTube
             </a>
 
             <!-- Secondary CTA -->
-            <a
-              href="#featured-content"
-              class="inline-flex items-center
-                     bg-cyan-500 hover:bg-cyan-600
-                     text-white font-semibold
-                     px-7 py-3 rounded-xl
-                     shadow-lg hover:shadow-xl
-                     transition-all duration-300
-                     hover:-translate-y-0.5
-                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400"
-            >
-              Explore Projects
-            </a>
+            <a href="#featured-content" class="btn-base btn-secondary">Explore Projects</a>
 
             <!-- Outline CTA -->
-            <a
-              href="./contact.html"
-              class="inline-flex items-center
-                     border-2 border-indigo-300
-                     text-indigo-100 hover:bg-indigo-500 hover:text-white
-                     font-semibold
-                     px-7 py-3 rounded-xl
-                     transition-all duration-300
-                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300"
-            >
-              Get In Touch
-            </a>
+            <a href="./contact.html" class="btn-base btn-tertiary">Get In Touch</a>
 
           </div>
 
           <!-- Stats -->
-          <div class="mt-12 grid grid-cols-3 gap-4 text-sm fade-up">
-            <div>
-              <div class="text-3xl font-bold">50+</div>
-              <p class="text-blue-100">Tutorials</p>
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-number" data-counter="50">50</div>
+              <p class="stat-label">Tutorials</p>
             </div>
-            <div>
-              <div class="text-3xl font-bold">10K+</div>
-              <p class="text-blue-100">Students</p>
+            <div class="stat-item">
+              <div class="stat-number" data-counter="10000">10000</div>
+              <p class="stat-label">Students</p>
             </div>
-            <div>
-              <div class="text-3xl font-bold">30+</div>
-              <p class="text-blue-100">Projects</p>
+            <div class="stat-item">
+              <div class="stat-number" data-counter="30">30</div>
+              <p class="stat-label">Projects</p>
             </div>
           </div>
         </div>
 
         <!-- Right: Animated Robot Building Section -->
         <div class="hidden md:flex items-center justify-center animate-fade-in">
-          <div class="relative w-full h-96 bg-gradient-to-br from-cyan-400/20 to-cyan-600/20 rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center animate-subtle-float" style="box-shadow: 0 0 30px rgba(34, 197, 233, 0.3), 0 0 60px rgba(6, 182, 212, 0.15);">
+          <div class="relative w-full h-96 hero-illustration rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center animate-subtle-float">
             <!-- Lottie Animation Player -->
             <!-- Choose animation by changing src URL: -->
             <!-- Option 1 (Robot): https://assets9.lottiefiles.com/packages/lf20_tno6cg2w.json -->
@@ -234,397 +201,470 @@
     </div>
   </header>
 
-  <!-- ===== Featured Categories Section ===== -->
-  <section id="featured-content" class="py-24 bg-white">
+
+
+  <!-- ===== LATEST TUTORIALS SECTION ===== -->
+  <section class="py-32 bg-white scroll-reveal revealed">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="heading-center">
-        <h2 class="heading-lg">Featured Categories</h2>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-          Choose your learning path. Each category includes tutorials, code, circuits, and documentation.
+      <div class="heading-center mb-20">
+        <div class="inline-block pill text-accent mb-6">
+          Learning Content
+        </div>
+        <h2 class="text-5xl md:text-6xl font-bold mb-6">
+          <span class="accent-clip">Latest Tutorials</span>
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Fresh content every week. Learn from comprehensive step-by-step guides with code, circuits, and video tutorials.
         </p>
       </div>
 
-      <!-- Category Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Robotics -->
-        <a href="./blog/robotics/obstacle.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-indigo-500 hover:shadow-xl transition-all">
-          <div class="text-5xl mb-4">🤖</div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Robotics</h3>
-          <p class="text-slate-600 mb-4">Learn obstacle avoidance, line following, robotic arms, and more.</p>
-          <span class="inline-flex items-center text-indigo-600 font-semibold group-hover:translate-x-1 transition-transform">Explore <span class="ml-2">→</span></span>
-        </a>
-
-        <!-- IoT -->
-        <a href="./blog.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-cyan-500 hover:shadow-xl transition-all">
-          <div class="text-5xl mb-4">📡</div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors">IoT Projects</h3>
-          <p class="text-slate-600 mb-4">Smart home, sensors, data collection, and real-world applications.</p>
-          <span class="inline-flex items-center text-cyan-600 font-semibold group-hover:translate-x-1 transition-transform">Explore <span class="ml-2">→</span></span>
-        </a>
-
-        <!-- AI & Machine Learning -->
-        <a href="./blog.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition-all">
-          <div class="text-5xl mb-4">🧠</div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">AI & ML</h3>
-          <p class="text-slate-600 mb-4">Image recognition, neural networks, and AI basics for beginners.</p>
-          <span class="inline-flex items-center text-orange-600 font-semibold group-hover:translate-x-1 transition-transform">Explore <span class="ml-2">→</span></span>
-        </a>
-
-        <!-- Raspberry Pi -->
-        <a href="./blog.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-indigo-500 hover:shadow-xl transition-all">
-          <div class="text-5xl mb-4">🍓</div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Raspberry Pi</h3>
-          <p class="text-slate-600 mb-4">GPIO, Python programming, hardware interfacing, and system setup.</p>
-          <span class="inline-flex items-center text-indigo-600 font-semibold group-hover:translate-x-1 transition-transform">Explore <span class="ml-2">→</span></span>
-        </a>
-
-        <!-- Scratch & MIT App -->
-        <a href="./blog.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-cyan-500 hover:shadow-xl transition-all">
-          <div class="text-5xl mb-4">🎮</div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors">Scratch & MIT App</h3>
-          <p class="text-slate-600 mb-4">Visual programming, game development, and app creation for beginners.</p>
-          <span class="inline-flex items-center text-cyan-600 font-semibold group-hover:translate-x-1 transition-transform">Explore <span class="ml-2">→</span></span>
-        </a>
-
-        <!-- 3D Printing -->
-        <a href="./blog.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition-all">
-          <div class="text-5xl mb-4">🖨️</div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">3D Printing</h3>
-          <p class="text-slate-600 mb-4">CAD design, 3D modeling, printing tips, and project enclosures.</p>
-          <span class="inline-flex items-center text-orange-600 font-semibold group-hover:translate-x-1 transition-transform">Explore <span class="ml-2">→</span></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Featured Tutorials Section ===== -->
-  <section class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-16">
-        <div>
-          <h2 class="heading-lg">Latest Tutorials</h2>
-          <p class="text-lg text-slate-600">
-            Fresh content every week. Subscribe to stay updated!
-          </p>
-        </div>
-        <a href="./blog.html" class="btn-small hidden md:inline-flex items-center gap-2 mt-4 md:mt-0">
-          View All Posts
-        </a>
-      </div>
-
-      <!-- Blog Grid -->
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <!-- Blog Card 1 -->
-        <a href="./blog/robotics/obstacle.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-indigo-500 hover:shadow-xl transition-all">
-          <div class="mb-4">
-            <span class="inline-block bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold">
-              Robotics
-            </span>
+      <!-- Tutorial Cards Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Tutorial Card 1 -->
+        <a href="./blog/robotics/obstacle.html" class="group tutorial-card scroll-reveal-scale">
+          <div class="relative overflow-hidden rounded-2xl mb-4 h-40 illustration-emoji-bg flex items-center justify-center text-5xl">
+            🤖
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
           </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600">Obstacle Avoidance Robot</h3>
-          <p class="text-slate-600 mb-6">
-            Build a robot that detects obstacles and navigates around them using ultrasonic sensors.
-          </p>
-          <div class="flex items-center justify-between">
-            <span class="text-slate-500 text-sm">📚 10 min read</span>
-            <span class="text-indigo-600 font-semibold group-hover:translate-x-1 transition-transform">Read →</span>
+          <div>
+              <span class="pill mb-3">Robotics</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 hover-text-accent transition-colors">
+              Obstacle Avoidance
+            </h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2">
+              Build a robot that detects obstacles using ultrasonic sensors.
+            </p>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>📚 10 min read</span>
+              <span class="text-accent font-semibold group-hover:translate-x-1 transition-transform">→</span>
+            </div>
           </div>
         </a>
 
-        <!-- Blog Card 2 (Placeholder) -->
-        <a href="./blog.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-cyan-500 hover:shadow-xl transition-all">
-          <div class="mb-4">
-            <span class="inline-block bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full text-sm font-semibold">
-              IoT
-            </span>
+        <!-- Tutorial Card 2 -->
+        <a href="./blog.html" class="group tutorial-card scroll-reveal-scale">
+          <div class="relative overflow-hidden rounded-2xl mb-4 h-40 illustration-emoji-bg flex items-center justify-center text-5xl">
+            📡
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
           </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600">Smart Temperature Monitor</h3>
-          <p class="text-slate-600 mb-6">
-            Create a WiFi-enabled temperature and humidity monitor with real-time data logging.
-          </p>
-          <div class="flex items-center justify-between">
-            <span class="text-slate-500 text-sm">📚 12 min read</span>
-            <span class="text-slate-400 text-sm font-semibold">Coming Soon</span>
-          </div>
-        </a>
-
-        <!-- Blog Card 3 (Placeholder) -->
-        <a href="./blog.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition-all">
-          <div class="mb-4">
-            <span class="inline-block bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">
-              AI
-            </span>
-          </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600">Image Recognition with TensorFlow</h3>
-          <p class="text-slate-600 mb-6">
-            Learn to build an AI model that recognizes objects in images using machine learning.
-          </p>
-          <div class="flex items-center justify-between">
-            <span class="text-slate-500 text-sm">📚 15 min read</span>
-            <span class="text-slate-400 text-sm font-semibold">Coming Soon</span>
+          <div>
+            <span class="pill mb-3">IoT</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 hover-text-accent transition-colors">
+              Smart Temperature Monitor
+            </h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2">
+              Create a WiFi temperature and humidity monitor with data logging.
+            </p>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>📚 12 min read</span>
+              <span class="text-slate-400">Coming Soon</span>
+            </div>
           </div>
         </a>
 
-        <!-- Blog Card 4 -->
-        <a href="./blog.html" class="group bg-white p-8 rounded-xl border-2 border-slate-200 hover:border-indigo-500 hover:shadow-xl transition-all">
-          <div class="mb-4">
-            <span class="inline-block bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold">
-              IoT
-            </span>
+        <!-- Tutorial Card 3 -->
+        <a href="./blog.html" class="group tutorial-card scroll-reveal-scale">
+          <div class="relative overflow-hidden rounded-2xl mb-4 h-40 illustration-emoji-bg flex items-center justify-center text-5xl">
+            🧠
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
           </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600">Smart Home Light Control</h3>
-          <p class="text-slate-600 mb-6">
-            Build WiFi-controlled lights using Node-RED and MQTT for home automation.
-          </p>
-          <div class="flex items-center justify-between">
-            <span class="text-slate-500 text-sm">📚 11 min read</span>
-            <span class="text-slate-400 text-sm font-semibold">Coming Soon</span>
+          <div>
+            <span class="pill mb-3">AI/ML</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 hover-text-accent transition-colors">
+              Image Recognition
+            </h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2">
+              Build an AI model that recognizes objects in images using TensorFlow.
+            </p>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>📚 15 min read</span>
+              <span class="text-slate-400">Coming Soon</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Tutorial Card 4 -->
+        <a href="./blog.html" class="group tutorial-card scroll-reveal-scale">
+          <div class="relative overflow-hidden rounded-2xl mb-4 h-40 illustration-emoji-bg flex items-center justify-center text-5xl">
+            🏠
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+          </div>
+          <div>
+            <span class="pill mb-3">IoT</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 hover-text-accent transition-colors">
+              Smart Home Lights
+            </h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2">
+              Control lights and appliances using MQTT protocol and Node-RED.
+            </p>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>📚 11 min read</span>
+              <span class="text-slate-400">Coming Soon</span>
+            </div>
           </div>
         </a>
       </div>
 
-      <!-- Mobile View All Button -->
-      <div class="md:hidden text-center">
-        <a href="./blog.html" class="btn-small">
-          View All Tutorials
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== LEARNING PATHS SECTION ===== -->
-  <section class="section-padding bg-white scroll-reveal">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="heading-center mb-16">
-        <h2 class="section-heading">Structured Learning Paths</h2>
-        <p class="section-subheading">Start your STEM journey with guided learning paths. Perfect for beginners.</p>
-      </div>
-
-      <!-- Learning Paths Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal-stagger">
-        
-        <!-- Path 1: Scratch Programming -->
-        <div class="learning-path-card scroll-reveal-scale">
-          <div class="learning-path-icon">🎮</div>
-          <h3 class="learning-path-title">Scratch Programming</h3>
-          <p class="learning-path-description">
-            Visual programming for beginners. Create interactive games and animations.
-          </p>
-          <div class="space-y-2 mb-4">
-            <div class="learning-path-difficulty">Beginner</div>
-            <div class="learning-path-duration">⏱️ 4-6 weeks</div>
-          </div>
-          <button class="learning-path-btn" onclick="alert('Learning path coming soon!')">
-            Start Learning
-          </button>
-        </div>
-
-        <!-- Path 2: Arduino Basics -->
-        <div class="learning-path-card scroll-reveal-scale">
-          <div class="learning-path-icon">⚡</div>
-          <h3 class="learning-path-title">Arduino Basics</h3>
-          <p class="learning-path-description">
-            Learn microcontroller programming and electronics fundamentals.
-          </p>
-          <div class="space-y-2 mb-4">
-            <div class="learning-path-difficulty">Beginner</div>
-            <div class="learning-path-duration">⏱️ 6-8 weeks</div>
-          </div>
-          <button class="learning-path-btn" onclick="alert('Learning path coming soon!')">
-            Start Learning
-          </button>
-        </div>
-
-        <!-- Path 3: Robotics -->
-        <div class="learning-path-card scroll-reveal-scale">
-          <div class="learning-path-icon">🤖</div>
-          <h3 class="learning-path-title">Robotics Fundamentals</h3>
-          <p class="learning-path-description">
-            Build robots from scratch. Learn mechanics, sensors, and control systems.
-          </p>
-          <div class="space-y-2 mb-4">
-            <div class="learning-path-difficulty">Intermediate</div>
-            <div class="learning-path-duration">⏱️ 10-12 weeks</div>
-          </div>
-          <button class="learning-path-btn" onclick="alert('Learning path coming soon!')">
-            Start Learning
-          </button>
-        </div>
-
-        <!-- Path 4: IoT Projects -->
-        <div class="learning-path-card scroll-reveal-scale">
-          <div class="learning-path-icon">📡</div>
-          <h3 class="learning-path-title">IoT Projects</h3>
-          <p class="learning-path-description">
-            Connect devices to the internet. Build smart systems and cloud applications.
-          </p>
-          <div class="space-y-2 mb-4">
-            <div class="learning-path-difficulty">Intermediate</div>
-            <div class="learning-path-duration">⏱️ 8-10 weeks</div>
-          </div>
-          <button class="learning-path-btn" onclick="alert('Learning path coming soon!')">
-            Start Learning
-          </button>
-        </div>
-
-        <!-- Path 5: Raspberry Pi -->
-        <div class="learning-path-card scroll-reveal-scale">
-          <div class="learning-path-icon">🍓</div>
-          <h3 class="learning-path-title">Raspberry Pi Mastery</h3>
-          <p class="learning-path-description">
-            Master the Raspberry Pi. Learn GPIO, Python, and real-world applications.
-          </p>
-          <div class="space-y-2 mb-4">
-            <div class="learning-path-difficulty">Intermediate</div>
-            <div class="learning-path-duration">⏱️ 8-10 weeks</div>
-          </div>
-          <button class="learning-path-btn" onclick="alert('Learning path coming soon!')">
-            Start Learning
-          </button>
-        </div>
-
-        <!-- Path 6: AI & ML -->
-        <div class="learning-path-card scroll-reveal-scale">
-          <div class="learning-path-icon">🧠</div>
-          <h3 class="learning-path-title">AI & Machine Learning</h3>
-          <p class="learning-path-description">
-            Understand artificial intelligence. Build neural networks and AI models.
-          </p>
-          <div class="space-y-2 mb-4">
-            <div class="learning-path-difficulty">Advanced</div>
-            <div class="learning-path-duration">⏱️ 12-16 weeks</div>
-          </div>
-          <button class="learning-path-btn" onclick="alert('Learning path coming soon!')">
-            Start Learning
-          </button>
-        </div>
-
-        <!-- Path 7: 3D Printing -->
-        <div class="learning-path-card scroll-reveal-scale">
-          <div class="learning-path-icon">🖨️</div>
-          <h3 class="learning-path-title">3D Printing & Design</h3>
-          <p class="learning-path-description">
-            Design and print 3D objects. Learn CAD and 3D modeling for projects.
-          </p>
-          <div class="space-y-2 mb-4">
-            <div class="learning-path-difficulty">Beginner</div>
-            <div class="learning-path-duration">⏱️ 4-6 weeks</div>
-          </div>
-          <button class="learning-path-btn" onclick="alert('Learning path coming soon!')">
-            Start Learning
-          </button>
-        </div>
-
-        <!-- Path 8: Advanced Robotics -->
-        <div class="learning-path-card scroll-reveal-scale">
-          <div class="learning-path-icon">🦾</div>
-          <h3 class="learning-path-title">Advanced Robotics</h3>
-          <p class="learning-path-description">
-            Build complex robotic systems. Master algorithms and autonomous navigation.
-          </p>
-          <div class="space-y-2 mb-4">
-            <div class="learning-path-difficulty">Advanced</div>
-            <div class="learning-path-duration">⏱️ 14-18 weeks</div>
-          </div>
-          <button class="learning-path-btn" onclick="alert('Learning path coming soon!')">
-            Start Learning
-          </button>
-        </div>
-      </div>
-
-      <!-- CTA -->
+      <!-- View All Button -->
       <div class="text-center mt-16">
-        <p class="text-lg mb-6" style="color: var(--text-secondary);">
-          Not sure where to start? Take our free skill assessment to find your perfect learning path.
-        </p>
-        <button class="btn-primary bg-indigo-600 hover:bg-indigo-700" onclick="alert('Assessment coming soon!')">
-          Take Skills Assessment
-        </button>
+        <a href="./blog.html" class="btn-primary inline-flex items-center gap-2 w-max">
+          View All Tutorials
+          <span>→</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== Learning Resources Section ===== -->
-  <section class="py-24 bg-indigo-50">
+  <!-- ===== FEATURED PROJECTS SECTION (MAIN ATTRACTION) ===== -->
+  <section id="featured-content" class="py-32 bg-section scroll-reveal revealed">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="heading-lg heading-center mb-16">Learning Resources</h2>
+      <div class="heading-center mb-20">
+        <div class="inline-block px-4 py-1 rounded-full pill text-sm font-semibold mb-6">Featured Projects</div>
+        <h2 class="text-5xl md:text-6xl font-bold mb-6">
+          <span class="accent-clip">Build Real Projects</span>
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          Explore our most popular robotics and IoT projects. Each project includes complete documentation, code, video tutorials, and hands-on learning.
+        </p>
+      </div>
 
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
-        <div>
-          <h3 class="heading-md">Everything You Need to Get Started</h3>
-          <ul class="space-y-5">
-            <li class="flex items-start gap-4">
-              <span class="text-2xl text-indigo-600 flex-shrink-0">✓</span>
-              <div>
-                <strong class="text-slate-900 block">Component Lists</strong>
-                <span class="text-slate-600">Complete parts list for each project</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="text-2xl text-indigo-600 flex-shrink-0">✓</span>
-              <div>
-                <strong class="text-slate-900 block">Circuit Diagrams</strong>
-                <span class="text-slate-600">Clear schematics and wiring guides</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="text-2xl text-indigo-600 flex-shrink-0">✓</span>
-              <div>
-                <strong class="text-slate-900 block">Code Files</strong>
-                <span class="text-slate-600">Full source code ready to use</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="text-2xl text-indigo-600 flex-shrink-0">✓</span>
-              <div>
-                <strong class="text-slate-900 block">Video Tutorials</strong>
-                <span class="text-slate-600">Step-by-step YouTube guides</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="text-2xl text-indigo-600 flex-shrink-0">✓</span>
-              <div>
-                <strong class="text-slate-900 block">Documentation PDFs</strong>
-                <span class="text-slate-600">Detailed project documentation</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="text-2xl text-indigo-600 flex-shrink-0">✓</span>
-              <div>
-                <strong class="text-slate-900 block">Troubleshooting</strong>
-                <span class="text-slate-600">Common errors and solutions</span>
-              </div>
-            </li>
-          </ul>
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1: Obstacle Avoiding Robot -->
+        <div class="group project-card-enhanced scroll-reveal-scale">
+          <div class="project-card-image relative overflow-hidden rounded-t-2xl">
+            <div class="w-full h-56 illustration-emoji-bg flex items-center justify-center text-7xl">🤖</div>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="difficulty-badge beginner">Beginner</span>
+              <span class="text-xs font-semibold text-slate-500">Arduino</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900 hover-text-accent transition-colors">Obstacle Avoiding Robot</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Build a robot that detects obstacles using ultrasonic sensors and navigates autonomously.
+            </p>
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <span class="tech-tag">Arduino</span>
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Robotics</span>
+            </div>
+            <a href="./blog/robotics/obstacle.html" class="project-btn project-btn-primary w-full justify-center">
+              View Project →
+            </a>
+          </div>
+        </div>
 
-          <a href="./resources.html" class="btn-small inline-flex items-center gap-2 mt-8">
-            Explore Resources
+        <!-- Project 2: Line Follower Robot -->
+        <div class="group project-card-enhanced scroll-reveal-scale">
+          <div class="project-card-image relative overflow-hidden rounded-t-2xl">
+            <div class="w-full h-56 illustration-emoji-bg flex items-center justify-center text-7xl">🏎️</div>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="difficulty-badge beginner">Beginner</span>
+              <span class="text-xs font-semibold text-slate-500">Arduino</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900 hover-text-accent transition-colors">Line Follower Robot</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Program a robot to follow a black line using infrared sensors and motor control.
+            </p>
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <span class="tech-tag">Arduino</span>
+              <span class="tech-tag">Sensors</span>
+              <span class="tech-tag">Control</span>
+            </div>
+            <a href="./blog.html" class="project-btn project-btn-primary w-full justify-center">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: IoT Weather Station -->
+        <div class="group project-card-enhanced scroll-reveal-scale">
+          <div class="project-card-image relative overflow-hidden rounded-t-2xl">
+            <div class="w-full h-56 illustration-emoji-bg flex items-center justify-center text-7xl">🌤️</div>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="difficulty-badge intermediate">Intermediate</span>
+              <span class="text-xs font-semibold text-slate-500">IoT</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900 hover-text-accent transition-colors">IoT Weather Station</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Create a WiFi-enabled weather station that logs temperature, humidity, and pressure to cloud.
+            </p>
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <span class="tech-tag">ESP32</span>
+              <span class="tech-tag">IoT</span>
+              <span class="tech-tag">Cloud</span>
+            </div>
+            <a href="./blog.html" class="project-btn project-btn-primary w-full justify-center">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Smart Home Automation -->
+        <div class="group project-card-enhanced scroll-reveal-scale">
+          <div class="project-card-image relative overflow-hidden rounded-t-2xl">
+            <div class="w-full h-56 illustration-emoji-bg flex items-center justify-center text-7xl">🏠</div>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="difficulty-badge intermediate">Intermediate</span>
+              <span class="text-xs font-semibold text-slate-500">IoT</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900 hover-text-accent transition-colors">Smart Home Automation</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Control lights, fans, and appliances using MQTT protocol and Node-RED interface.
+            </p>
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <span class="tech-tag">MQTT</span>
+              <span class="tech-tag">Node-RED</span>
+              <span class="tech-tag">IoT</span>
+            </div>
+            <a href="./blog.html" class="project-btn project-btn-primary w-full justify-center">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: AI Object Detection -->
+        <div class="group project-card-enhanced scroll-reveal-scale">
+          <div class="project-card-image relative overflow-hidden rounded-t-2xl">
+            <div class="w-full h-56 illustration-emoji-bg flex items-center justify-center text-7xl">🧠</div>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="difficulty-badge advanced">Advanced</span>
+              <span class="text-xs font-semibold text-slate-500">AI</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900 hover-text-accent transition-colors">AI Object Detection</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Build a real-time object detection system using TensorFlow and a Raspberry Pi camera.
+            </p>
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">AI/ML</span>
+            </div>
+            <a href="./blog.html" class="project-btn project-btn-primary w-full justify-center">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: 3D Printed Enclosure -->
+        <div class="group project-card-enhanced scroll-reveal-scale">
+          <div class="project-card-image relative overflow-hidden rounded-t-2xl">
+            <div class="w-full h-56 illustration-emoji-bg flex items-center justify-center text-7xl">🖨️</div>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="difficulty-badge beginner">Beginner</span>
+              <span class="text-xs font-semibold text-slate-500">CAD</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900 hover-text-accent transition-colors">3D Printed Enclosure</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Design and print a custom enclosure for your Arduino or IoT project using Tinkercad.
+            </p>
+            <div class="flex gap-2 mb-6 flex-wrap">
+              <span class="tech-tag">Tinkercad</span>
+              <span class="tech-tag">3D Printing</span>
+              <span class="tech-tag">CAD</span>
+            </div>
+            <a href="./blog.html" class="project-btn project-btn-primary w-full justify-center">
+              View Project →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== YOUTUBE CREATOR SECTION ===== -->
+  <section class="py-32 cta-dark overflow-hidden scroll-reveal revealed">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Left: Creator Info -->
+        <div class="fade-up">
+          <div class="inline-block px-4 py-1 rounded-full text-accent text-sm font-semibold mb-6 border border-accent">
+            🔴 YouTube Channel
+          </div>
+          <h2 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Subscribe to Our YouTube Channel
+          </h2>
+          <p class="text-xl text-slate-300 mb-8 leading-relaxed max-w-lg">
+            Get weekly video tutorials on Robotics, IoT, AI, and Electronics. Join thousands of students building amazing projects.
+          </p>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-8 mb-12">
+            <div>
+              <div class="text-4xl font-bold text-accent">50+</div>
+              <p class="text-slate-400 text-sm mt-2">Video Tutorials</p>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-accent">10K+</div>
+              <p class="text-slate-400 text-sm mt-2">Subscribers</p>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-accent">100K</div>
+              <p class="text-slate-400 text-sm mt-2">Total Views</p>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer"
+             class="btn-primary inline-flex items-center gap-3 px-8 py-4 text-lg w-max">
+            <span class="text-2xl">▶️</span>
+            Subscribe on YouTube
+            <span class="text-xl group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
 
-        <!-- Right: Feature Highlight -->
-        <div class="bg-white rounded-2xl shadow-xl p-10 border-l-4 border-indigo-600">
-          <h4 class="heading-sm">Free Downloadable PDFs</h4>
-          <p class="text-slate-600 mb-8">
-            Access complete project documentation, component datasheets, and troubleshooting guides. All files are free and available for download.
-          </p>
-          <div class="bg-indigo-50 rounded-xl p-6 text-center border-2 border-indigo-200">
-            <p class="text-slate-700 mb-4 font-semibold">📥 50+ Files Available</p>
-            <button class="btn-secondary w-full py-2 px-6">
-              Download All
-            </button>
+        <!-- Right: Video Grid Preview -->
+        <div class="relative">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-2xl overflow-hidden video-thumb aspect-video flex items-center justify-center text-6xl hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+              🤖
+            </div>
+            <div class="rounded-2xl overflow-hidden video-thumb aspect-video flex items-center justify-center text-6xl hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+              📡
+            </div>
+            <div class="rounded-2xl overflow-hidden video-thumb aspect-video flex items-center justify-center text-6xl hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+              🧠
+            </div>
+            <div class="rounded-2xl overflow-hidden video-thumb aspect-video flex items-center justify-center text-6xl hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+              🏠
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LATEST TUTORIALS SECTION ===== -->
+  <section class="py-32 bg-white scroll-reveal revealed">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="heading-center mb-20">
+        <div class="inline-block px-4 py-1 rounded-full pill text-sm font-semibold mb-6">Learning Content</div>
+        <h2 class="text-5xl md:text-6xl font-bold mb-6"><span class="accent-clip">Latest Tutorials</span></h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Fresh content every week. Learn from comprehensive step-by-step guides with code, circuits, and video tutorials.
+        </p>
+      </div>
+
+      <!-- Tutorial Cards Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Tutorial Card 1 -->
+        <a href="./blog/robotics/obstacle.html" class="group tutorial-card scroll-reveal-scale">
+          <div class="relative overflow-hidden rounded-2xl mb-4 h-40 illustration-emoji-bg flex items-center justify-center text-5xl">
+            🤖
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+          </div>
+          <div>
+            <span class="pill mb-3">Robotics</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 hover-text-accent transition-colors">
+              Obstacle Avoidance
+            </h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2">
+              Build a robot that detects obstacles using ultrasonic sensors.
+            </p>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>📚 10 min read</span>
+              <span class="text-accent font-semibold group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Tutorial Card 2 -->
+        <a href="./blog.html" class="group tutorial-card scroll-reveal-scale">
+          <div class="relative overflow-hidden rounded-2xl mb-4 h-40 illustration-emoji-bg flex items-center justify-center text-5xl">
+            📡
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+          </div>
+          <div>
+            <span class="pill mb-3">IoT</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 hover-text-accent transition-colors">
+              Smart Temperature Monitor
+            </h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2">
+              Create a WiFi temperature and humidity monitor with data logging.
+            </p>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>📚 12 min read</span>
+              <span class="text-slate-400">Coming Soon</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Tutorial Card 3 -->
+        <a href="./blog.html" class="group tutorial-card scroll-reveal-scale">
+          <div class="relative overflow-hidden rounded-2xl mb-4 h-40 illustration-emoji-bg flex items-center justify-center text-5xl">
+            🧠
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+          </div>
+          <div>
+            <span class="pill mb-3">AI/ML</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 hover-text-accent transition-colors">
+              Image Recognition
+            </h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2">
+              Build an AI model that recognizes objects in images using TensorFlow.
+            </p>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>📚 15 min read</span>
+              <span class="text-slate-400">Coming Soon</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Tutorial Card 4 -->
+        <a href="./blog.html" class="group tutorial-card scroll-reveal-scale">
+          <div class="relative overflow-hidden rounded-2xl mb-4 h-40 illustration-emoji-bg flex items-center justify-center text-5xl">
+            🏠
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+          </div>
+          <div>
+            <span class="pill mb-3">IoT</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 hover-text-accent transition-colors">
+              Smart Home Lights
+            </h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2">
+              Control lights and appliances using MQTT protocol and Node-RED.
+            </p>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>📚 11 min read</span>
+              <span class="text-slate-400">Coming Soon</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- View All Button -->
+      <div class="text-center mt-16">
+        <a href="./blog.html" class="btn-primary inline-flex items-center gap-2 w-max">
+          View All Tutorials
+          <span>→</span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ===== Call-to-Action Section ===== -->
-  <section class="py-24 bg-gradient-to-r from-indigo-700 via-indigo-600 to-slate-900 text-white">
+  <section class="py-24 cta-dark scroll-reveal revealed">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-5xl md:text-6xl font-bold mb-6">Ready to Start Learning?</h2>
-      <p class="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
+      <p class="text-xl text-accent mb-10 max-w-2xl mx-auto">
         Join thousands of students building amazing robotics and IoT projects. Subscribe to our YouTube channel and get notified about new tutorials every week.
       </p>
 
@@ -640,25 +680,25 @@
       </div>
 
       <!-- Newsletter Signup -->
-      <div class="bg-indigo-800 rounded-2xl p-10 max-w-md mx-auto">
+      <div class="cta-panel rounded-2xl p-10 max-w-md mx-auto">
         <h3 class="text-3xl font-bold mb-4">📬 Get Weekly Updates</h3>
-        <p class="text-indigo-100 mb-8">
+        <p class="text-accent mb-8">
           Subscribe to our newsletter for new tutorials, project ideas, and exclusive content.
         </p>
         <form class="flex flex-col gap-4" id="newsletter-form">
           <input type="email" id="newsletter-email" placeholder="your.email@example.com" required 
-                 class="w-full px-4 py-3 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-500 font-medium text-sm">
+                 class="w-full px-4 py-3 rounded-lg text-slate-900 focus:outline-none focus-ring-accent font-medium text-sm">
           <button type="submit" class="btn-primary w-full">
             Subscribe
           </button>
         </form>
-        <p class="text-indigo-100 text-xs mt-4 text-center">We send updates once a week. No spam, unsubscribe anytime.</p>
+        <p class="text-accent text-xs mt-4 text-center">We send updates once a week. No spam, unsubscribe anytime.</p>
       </div>
     </div>
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer class="footer-premium">
+  <footer class="footer-premium scroll-reveal revealed">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">

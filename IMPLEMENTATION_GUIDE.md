@@ -245,7 +245,7 @@ Add your own styles to `assets/css/main.css`:
 ```css
 @layer components {
   .my-custom-box {
-    @apply bg-blue-50 p-6 rounded-lg border-2 border-blue-200;
+   @apply tile-neutral p-6 rounded-lg border-2 border-accent;
   }
 }
 ```

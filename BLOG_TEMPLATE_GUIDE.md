@@ -298,8 +298,8 @@ Place files in `/assets/pdfs/` and link them:
 ### Colors
 To change colors, use Tailwind classes:
 - Primary buttons: `bg-blue-600 hover:bg-blue-700`
-- Success boxes: `bg-green-50 border-green-300`
-- Warning boxes: `bg-yellow-50 border-yellow-300`
+- Success boxes: `tile-neutral border-accent`
+- Warning boxes: `tile-neutral border-accent`
 
 ### Difficulty Levels
 - `beginner` – Can do with basic guidance

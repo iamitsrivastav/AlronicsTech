@@ -7,7 +7,7 @@
   <meta name="description" content="Alronics Tech Resources - Free datasheets, code examples, tools, and learning materials for robotics and IoT.">
   <meta name="keywords" content="datasheets, code examples, robotics tools, learning resources, downloads">
   <meta name="author" content="Alronics Tech">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#36ECDE">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Resources | Alronics Tech">
   <meta property="og:description" content="Free downloads, datasheets, and tools for electronics projects">
@@ -26,8 +26,8 @@
       position: absolute !important;
       left: -9999px !important;
       z-index: 9999 !important;
-      background-color: #4F46E5 !important;
-      color: white !important;
+      background-color: #00203F !important;
+      color: #FFFFFF !important;
       padding: 0.75rem 1.5rem !important;
       text-decoration: none !important;
       font-weight: 600 !important;
@@ -71,17 +71,17 @@
   <script src="./assets/js/scroll-animations.js"></script>
 
   <!-- ===== Page Header ===== -->
-  <header class="bg-gradient-to-r from-indigo-600 to-slate-900 text-white py-16">
+  <header class="page-hero text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center gap-2 text-sm text-indigo-100">
+        <ol class="flex items-center gap-2 text-sm" style="color:var(--text-muted)">
           <li><a href="./index.html" class="hover:text-white">Home</a></li>
-          <li>/</li>
-          <li aria-current="page" class="text-white font-medium">Resources</li>
+          <li style="color:var(--text-muted)">/</li>
+          <li aria-current="page" style="color:var(--accent-primary);" class="font-medium">Resources</li>
         </ol>
       </nav>
       <h1 class="text-5xl font-bold mb-4">Learning Resources</h1>
-      <p class="text-xl text-indigo-100">
+      <p class="text-xl text-accent">
         Free datasheets, code samples, software tools, and external resources for your projects.
       </p>
     </div>
@@ -102,7 +102,7 @@
       
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Datasheet 1 -->
-        <div class="border-2 border-purple-200 rounded-lg p-6 card-hover">
+          <div class="card card-hover">
           <div class="flex items-start justify-between mb-4">
             <h3 class="text-xl font-bold">HC-SR04 Ultrasonic Sensor</h3>
             <span class="text-2xl">📡</span>
@@ -111,7 +111,7 @@
             Distance measurement sensor datasheet with pinout diagram, electrical characteristics, and timing information.
           </p>
           <div class="flex gap-3">
-            <a href="/assets/pdfs/hc-sr04.pdf" class="btn-primary bg-purple-600 hover:bg-purple-700 text-center flex-1" download>
+            <a href="/assets/pdfs/hc-sr04.pdf" class="btn-base btn-primary text-center flex-1" download>
               📥 Download PDF
             </a>
           </div>
@@ -127,7 +127,7 @@
             Digital temperature and humidity sensor specification sheet with I2C communication protocol details.
           </p>
           <div class="flex gap-3">
-            <a href="/assets/pdfs/dht22.pdf" class="btn-primary bg-purple-600 hover:bg-purple-700 text-center flex-1" download>
+            <a href="/assets/pdfs/dht22.pdf" class="btn-primary text-center flex-1" download>
               📥 Download PDF
             </a>
           </div>
@@ -143,7 +143,7 @@
             Dual H-bridge motor driver specifications with application circuits and PWM control guide.
           </p>
           <div class="flex gap-3">
-            <a href="/assets/pdfs/l298n.pdf" class="btn-primary bg-purple-600 hover:bg-purple-700 text-center flex-1" download>
+            <a href="/assets/pdfs/l298n.pdf" class="btn-primary text-center flex-1" download>
               📥 Download PDF
             </a>
           </div>
@@ -159,7 +159,7 @@
             Micro servo motor technical specifications with timing diagrams and mechanical dimensions.
           </p>
           <div class="flex gap-3">
-            <a href="/assets/pdfs/sg90.pdf" class="btn-primary bg-purple-600 hover:bg-purple-700 text-center flex-1" download>
+            <a href="/assets/pdfs/sg90.pdf" class="btn-primary text-center flex-1" download>
               📥 Download PDF
             </a>
           </div>
@@ -204,7 +204,7 @@ def measure_distance():
     
     distance = (stop-start) * 17150
     return distance</code></pre>
-          <a href="/assets/pdfs/ultrasonic-code.pdf" class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center" download>
+          <a href="/assets/pdfs/ultrasonic-code.pdf" class="btn-primary w-full text-center" download>
             📥 Download Code
           </a>
         </div>
@@ -233,7 +233,7 @@ void sendData(float temp) {
   String url = "http://api/log";
   http.POST(url + "?temp=" + temp);
 }</code></pre>
-          <a href="/assets/pdfs/wifi-logger-code.pdf" class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center" download>
+          <a href="/assets/pdfs/wifi-logger-code.pdf" class="btn-primary w-full text-center" download>
             📥 Download Code
           </a>
         </div>
@@ -259,7 +259,7 @@ void loop() {
   int speed = map(analogRead(potPin),0,1023,0,255);
   analogWrite(motorPin, speed);
 }</code></pre>
-          <a href="/assets/pdfs/pwm-control.pdf" class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center" download>
+          <a href="/assets/pdfs/pwm-control.pdf" class="btn-primary w-full text-center" download>
             📥 Download Code
           </a>
         </div>
@@ -288,7 +288,7 @@ void loop() {
   }
   delay(500);
 }</code></pre>
-          <a href="/assets/pdfs/servo-control.pdf" class="btn-primary bg-blue-600 hover:bg-blue-700 w-full text-center" download>
+          <a href="/assets/pdfs/servo-control.pdf" class="btn-primary w-full text-center" download>
             📥 Download Code
           </a>
         </div>
@@ -317,8 +317,8 @@ void loop() {
           <p class="text-gray-700 mb-4">
             Official IDE for programming Arduino boards. Includes board manager, library manager, and serial monitor.
           </p>
-          <a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener noreferrer"
-             class="btn-primary bg-green-600 hover:bg-green-700 w-full text-center">
+           <a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener noreferrer"
+             class="btn-primary w-full text-center">
             🌐 Download Free
           </a>
         </div>
@@ -335,8 +335,8 @@ void loop() {
           <p class="text-gray-700 mb-4">
             Simple Python IDE with built-in Raspberry Pi support, debugger, and direct microcontroller code execution.
           </p>
-          <a href="https://thonny.org/" target="_blank" rel="noopener noreferrer"
-             class="btn-primary bg-green-600 hover:bg-green-700 w-full text-center">
+           <a href="https://thonny.org/" target="_blank" rel="noopener noreferrer"
+             class="btn-primary w-full text-center">
             🌐 Download Free
           </a>
         </div>
@@ -353,8 +353,8 @@ void loop() {
           <p class="text-gray-700 mb-4">
             Drag-and-drop tool for designing circuits with breadboard view, schematic, and PCB design capabilities.
           </p>
-          <a href="https://fritzing.org/" target="_blank" rel="noopener noreferrer"
-             class="btn-primary bg-green-600 hover:bg-green-700 w-full text-center">
+           <a href="https://fritzing.org/" target="_blank" rel="noopener noreferrer"
+             class="btn-primary w-full text-center">
             🌐 Download Free
           </a>
         </div>
@@ -371,8 +371,8 @@ void loop() {
           <p class="text-gray-700 mb-4">
             Lightweight code editor with extensions for Python, Arduino, and remote coding on Raspberry Pi.
           </p>
-          <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer"
-             class="btn-primary bg-green-600 hover:bg-green-700 w-full text-center">
+           <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer"
+             class="btn-primary w-full text-center">
             🌐 Download Free
           </a>
         </div>
@@ -389,8 +389,8 @@ void loop() {
           <p class="text-gray-700 mb-4">
             Online simulator for testing code without hardware. Support for 100+ components and realistic physics simulation.
           </p>
-          <a href="https://wokwi.com/" target="_blank" rel="noopener noreferrer"
-             class="btn-primary bg-green-600 hover:bg-green-700 w-full text-center">
+           <a href="https://wokwi.com/" target="_blank" rel="noopener noreferrer"
+             class="btn-primary w-full text-center">
             🌐 Open Online
           </a>
         </div>
@@ -407,8 +407,8 @@ void loop() {
           <p class="text-gray-700 mb-4">
             Free 3D design and Arduino simulation. Perfect for designing robot chassis and testing circuits virtually.
           </p>
-          <a href="https://www.tinkercad.com/" target="_blank" rel="noopener noreferrer"
-             class="btn-primary bg-green-600 hover:bg-green-700 w-full text-center">
+           <a href="https://www.tinkercad.com/" target="_blank" rel="noopener noreferrer"
+             class="btn-primary w-full text-center">
             🌐 Open Online
           </a>
         </div>
@@ -429,16 +429,16 @@ void loop() {
         <div class="border-2 border-yellow-200 rounded-lg p-6 card-hover">
           <h3 class="text-xl font-bold mb-3">📖 Official Documentation</h3>
           <ul class="space-y-2">
-            <li><a href="https://www.arduino.cc/reference/en/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.arduino.cc/reference/en/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Arduino Reference
             </a></li>
-            <li><a href="https://www.raspberrypi.com/documentation/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.raspberrypi.com/documentation/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Raspberry Pi Official Docs
             </a></li>
-            <li><a href="https://micropython.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://micropython.org/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               MicroPython Documentation
             </a></li>
-            <li><a href="https://www.python.org/doc/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.python.org/doc/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Python.org Official Docs
             </a></li>
           </ul>
@@ -448,16 +448,16 @@ void loop() {
         <div class="border-2 border-yellow-200 rounded-lg p-6 card-hover">
           <h3 class="text-xl font-bold mb-3">🎥 Video Tutorials</h3>
           <ul class="space-y-2">
-            <li><a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               ▶ Alronics Tech YouTube
             </a></li>
-            <li><a href="https://www.youtube.com/@educ8s" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.youtube.com/@educ8s" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               ▶ educ8s Electronics
             </a></li>
-            <li><a href="https://www.youtube.com/@GreatScott" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.youtube.com/@GreatScott" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               ▶ GreatScott Electronics
             </a></li>
-            <li><a href="https://www.youtube.com/c/PaulMcWhorter" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.youtube.com/c/PaulMcWhorter" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               ▶ Paul McWhorter Arduino
             </a></li>
           </ul>
@@ -467,16 +467,16 @@ void loop() {
         <div class="border-2 border-yellow-200 rounded-lg p-6 card-hover">
           <h3 class="text-xl font-bold mb-3">💡 Project Ideas</h3>
           <ul class="space-y-2">
-            <li><a href="https://www.instructables.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.instructables.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Instructables - DIY Projects
             </a></li>
-            <li><a href="https://www.hackaday.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.hackaday.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Hackaday - Tech Projects
             </a></li>
-            <li><a href="https://www.hackster.io/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.hackster.io/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Hackster.io Projects
             </a></li>
-            <li><a href="https://www.arduino.cc/en/ArduinoCertified/Projects" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.arduino.cc/en/ArduinoCertified/Projects" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Arduino Project Hub
             </a></li>
           </ul>
@@ -486,16 +486,16 @@ void loop() {
         <div class="border-2 border-yellow-200 rounded-lg p-6 card-hover">
           <h3 class="text-xl font-bold mb-3">🛒 Component Suppliers</h3>
           <ul class="space-y-2">
-            <li><a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Amazon - Quick Shipping
             </a></li>
-            <li><a href="https://www.aliexpress.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.aliexpress.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               AliExpress - Budget Option
             </a></li>
-            <li><a href="https://www.adafruit.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.adafruit.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               Adafruit - Quality Components
             </a></li>
-            <li><a href="https://www.sparkfun.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+            <li><a href="https://www.sparkfun.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
               SparkFun Electronics
             </a></li>
           </ul>
@@ -514,7 +514,7 @@ void loop() {
       
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Shopping Guide 1 -->
-        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border-2 border-blue-200">
+          <div class="category-card">
           <h3 class="text-lg font-bold mb-3">🟢 Budget Shopping</h3>
           <p class="text-sm text-gray-700 mb-4">
             Best for beginners and students with limited budgets.
@@ -528,7 +528,7 @@ void loop() {
         </div>
 
         <!-- Shopping Guide 2 -->
-        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6 border-2 border-yellow-200">
+          <div class="category-card">
           <h3 class="text-lg font-bold mb-3">🟡 Balanced Option</h3>
           <p class="text-sm text-gray-700 mb-4">
             Good quality with reasonable prices and faster shipping.
@@ -542,7 +542,7 @@ void loop() {
         </div>
 
         <!-- Shopping Guide 3 -->
-        <div class="bg-gradient-to-br from-red-50 to-pink-50 rounded-lg p-6 border-2 border-red-200">
+          <div class="category-card">
           <h3 class="text-lg font-bold mb-3">🔴 Premium Quality</h3>
           <p class="text-sm text-gray-700 mb-4">
             Best quality with expert support and fast shipping.
@@ -559,7 +559,7 @@ void loop() {
 
     <!-- Quick Links to PDFs -->
     <section class="mb-16">
-      <div class="bg-blue-50 rounded-lg p-8 border-l-4 border-blue-600">
+      <div class="tile-neutral rounded-lg p-8 border-l-4">
         <h2 class="text-2xl font-bold mb-4">📥 All Datasheets & Guides</h2>
         <p class="text-gray-700 mb-6">
           Download all datasheets and code examples as a single ZIP file for offline access.
