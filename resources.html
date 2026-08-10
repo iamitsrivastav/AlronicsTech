@@ -111,7 +111,7 @@
             Distance measurement sensor datasheet with pinout diagram, electrical characteristics, and timing information.
           </p>
           <div class="flex gap-3">
-            <a href="/assets/pdfs/hc-sr04.pdf" class="btn-base btn-primary text-center flex-1" download>
+            <a href="./assets/pdfs/hc-sr04.pdf" class="btn-base btn-primary text-center flex-1" download>
               📥 Download PDF
             </a>
           </div>
@@ -127,7 +127,7 @@
             Digital temperature and humidity sensor specification sheet with I2C communication protocol details.
           </p>
           <div class="flex gap-3">
-            <a href="/assets/pdfs/dht22.pdf" class="btn-primary text-center flex-1" download>
+            <a href="./assets/pdfs/dht22.pdf" class="btn-primary text-center flex-1" download>
               📥 Download PDF
             </a>
           </div>
@@ -143,7 +143,7 @@
             Dual H-bridge motor driver specifications with application circuits and PWM control guide.
           </p>
           <div class="flex gap-3">
-            <a href="/assets/pdfs/l298n.pdf" class="btn-primary text-center flex-1" download>
+            <a href="./assets/pdfs/l298n.pdf" class="btn-primary text-center flex-1" download>
               📥 Download PDF
             </a>
           </div>
@@ -159,7 +159,7 @@
             Micro servo motor technical specifications with timing diagrams and mechanical dimensions.
           </p>
           <div class="flex gap-3">
-            <a href="/assets/pdfs/sg90.pdf" class="btn-primary text-center flex-1" download>
+            <a href="./assets/pdfs/sg90.pdf" class="btn-primary text-center flex-1" download>
               📥 Download PDF
             </a>
           </div>
@@ -204,7 +204,7 @@ def measure_distance():
     
     distance = (stop-start) * 17150
     return distance</code></pre>
-          <a href="/assets/pdfs/ultrasonic-code.pdf" class="btn-primary w-full text-center" download>
+          <a href="./assets/pdfs/ultrasonic-code.pdf" class="btn-primary w-full text-center" download>
             📥 Download Code
           </a>
         </div>
@@ -233,7 +233,7 @@ void sendData(float temp) {
   String url = "http://api/log";
   http.POST(url + "?temp=" + temp);
 }</code></pre>
-          <a href="/assets/pdfs/wifi-logger-code.pdf" class="btn-primary w-full text-center" download>
+          <a href="./assets/pdfs/wifi-logger-code.pdf" class="btn-primary w-full text-center" download>
             📥 Download Code
           </a>
         </div>
@@ -259,7 +259,7 @@ void loop() {
   int speed = map(analogRead(potPin),0,1023,0,255);
   analogWrite(motorPin, speed);
 }</code></pre>
-          <a href="/assets/pdfs/pwm-control.pdf" class="btn-primary w-full text-center" download>
+          <a href="./assets/pdfs/pwm-control.pdf" class="btn-primary w-full text-center" download>
             📥 Download Code
           </a>
         </div>
@@ -288,7 +288,7 @@ void loop() {
   }
   delay(500);
 }</code></pre>
-          <a href="/assets/pdfs/servo-control.pdf" class="btn-primary w-full text-center" download>
+          <a href="./assets/pdfs/servo-control.pdf" class="btn-primary w-full text-center" download>
             📥 Download Code
           </a>
         </div>
@@ -564,7 +564,7 @@ void loop() {
         <p class="text-gray-700 mb-6">
           Download all datasheets and code examples as a single ZIP file for offline access.
         </p>
-        <a href="/assets/pdfs/all-resources.zip" class="btn-primary">
+        <a href="./assets/pdfs/all-resources.zip" class="btn-primary">
           📦 Download All Resources (5 MB)
         </a>
       </div>
@@ -685,9 +685,9 @@ void loop() {
 
         <!-- Links -->
         <div class="flex flex-wrap gap-6 text-sm">
-          <a href="#" class="footer-link">🔒 Privacy Policy</a>
-          <a href="#" class="footer-link">⚖️ Terms of Service</a>
-          <a href="#" class="footer-link">🍪 Cookie Policy</a>
+          <a href="./about.html" class="footer-link">ℹ️ About Us</a>
+          <a href="./contact.html" class="footer-link">✉️ Contact</a>
+          <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="footer-link">▶️ YouTube</a>
         </div>
       </div>
     </div>
