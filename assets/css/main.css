@@ -2362,13 +2362,19 @@ html[data-theme="dark"] .focus-visible:focus {
 
 .footer-social-link {
   @apply inline-flex items-center justify-center w-10 h-10 rounded-lg transition-all;
-  background: rgba(54, 236, 222, 0.14);
+  background: rgba(54, 236, 222, 0.18);
+  border: 1px solid rgba(54, 236, 222, 0.35);
   color: var(--bg-dark);
+  box-shadow: 0 14px 30px rgba(5, 43, 71, 0.08);
+  transform: translateY(0);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .footer-social-link:hover {
   background: var(--accent-primary);
   color: var(--bg-dark);
+  border-color: rgba(54, 236, 222, 0.9);
+  box-shadow: 0 20px 40px rgba(54, 236, 222, 0.16);
   transform: translateY(-4px);
 }
 
