@@ -195,22 +195,6 @@
   /**
    * Handle theme changes - refresh animations
    */
-  function initThemeChangeListener() {
-    window.addEventListener('themeChange', () => {
-      // Re-initialize animations with new theme
-      const revealed = document.querySelectorAll('.revealed');
-      revealed.forEach(el => {
-        el.classList.remove('revealed');
-      });
-
-      // Small delay to allow CSS to be applied
-      setTimeout(() => {
-        initScrollAnimations();
-        initStaggeredReveals();
-      }, 50);
-    });
-  }
-
   /**
    * Main initialization
    * FIXED: Improved timing with multiple fallbacks
@@ -218,11 +202,10 @@
   function init() {
     // Helper function to run initialization
     function runInit() {
+      initAutoReveal();
       initScrollAnimations();
       initStaggeredReveals();
-      initAutoReveal();
       observeDynamicContent();
-      initThemeChangeListener();
     }
 
     // Check current document state
@@ -239,27 +222,7 @@
       runInit();
     }
 
-    // FALLBACK: If DOMContentLoaded hasn't fired yet, ensure init runs anyway
-    // This prevents sections from staying hidden if readyState is stuck
-    setTimeout(() => {
-      if (!window.scrollAnimationsInitialized) {
-        window.scrollAnimationsInitialized = true;
-        runInit();
-      }
-    }, 3000);
   }
-
-  // Mark initialization as complete
-  function markInitComplete() {
-    window.scrollAnimationsInitialized = true;
-  }
-
-  // Original init call wrapped to mark complete
-  const originalInit = init;
-  init = function() {
-    originalInit();
-    markInitComplete();
-  };
 
   // Start animations
   init();

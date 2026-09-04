@@ -125,22 +125,22 @@ function initNavbar() {
     const icons = {
       youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2c-.3-1.4-1.5-2.4-3-2.4H3.5C2 3.8.8 4.8.5 6.2c-.3 1.4-.5 3.8-.5 3.8s0 2.4.5 3.8c.3 1.4 1.5 2.4 3 2.4h17c1.5 0 2.7-1 3-2.4.5-1.4.5-3.8.5-3.8s0-2.4-.5-3.8zM9.5 8.5l6 3.5-6 3.5V8.5z"/></svg>',
       instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>',
-      x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+      x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+      mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>'
     };
     return icons[name];
   };
 
   // Helper: Toggle mobile menu
   const toggleMobileMenu = (hamburger, mobileMenu, isOpen) => {
+    clearTimeout(hamburger.menuTimer);
     hamburger.setAttribute('aria-expanded', isOpen);
     if (isOpen) {
       mobileMenu.classList.remove('hidden');
-      setTimeout(() => {
-        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-      }, 0);
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
     } else {
       mobileMenu.style.maxHeight = '0';
-      setTimeout(() => {
+      hamburger.menuTimer = setTimeout(() => {
         mobileMenu.classList.add('hidden');
       }, 300);
     }
@@ -227,10 +227,7 @@ function initNavbar() {
     className: 'theme-toggle ml-3',
     'aria-label': 'Toggle dark/light mode',
     id: 'theme-toggle-desktop',
-    innerHTML: `
-      <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
-      <span class="theme-toggle-icon theme-toggle-sun">☀️</span>
-    `
+    innerHTML: '<span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">&#9790;</span><span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">&#9788;</span>'
   });
   desktopThemeBtn.addEventListener('click', toggleTheme);
   desktopMenu.appendChild(desktopThemeBtn);
@@ -270,10 +267,7 @@ function initNavbar() {
     className: 'theme-toggle md:hidden',
     'aria-label': 'Toggle dark/light mode',
     id: 'theme-toggle-mobile',
-    innerHTML: `
-      <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
-      <span class="theme-toggle-icon theme-toggle-sun">☀️</span>
-    `
+    innerHTML: '<span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">&#9790;</span><span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">&#9788;</span>'
   });
   mobileThemeBtn.addEventListener('click', toggleTheme);
   mobileControls.appendChild(mobileThemeBtn);
@@ -366,8 +360,9 @@ function initNavbar() {
   const mobileEmailLink = createElement('a', {
     href: `mailto:${config.email}`,
     className: 'text-white hover:text-accent-hover transition-colors text-2xl',
-    'aria-label': 'Email us'
-  }, '✉️');
+    'aria-label': 'Email us',
+    innerHTML: socialIcon('mail')
+  });
   mobileSocialLinks.appendChild(mobileEmailLink);
 
   mobileSocialSection.appendChild(mobileSocialLinks);
