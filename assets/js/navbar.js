@@ -64,7 +64,6 @@ function toggleTheme() {
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
   setTheme(newTheme);
 
-  console.log('Theme switched to:', newTheme);
 }
 
 // Initialize theme on DOM ready
@@ -89,6 +88,7 @@ function initNavbar() {
       { href: './blog.html', label: 'Blog' },
       { href: './projects.html', label: 'Projects' },
       { href: './resources.html', label: 'Resources' },
+      { href: './schools.html', label: 'For Schools' },
       { href: './contact.html', label: 'Contact' }
     ]
   };
@@ -119,6 +119,15 @@ function initNavbar() {
     });
     if (content) el.textContent = content;
     return el;
+  };
+
+  const socialIcon = (name) => {
+    const icons = {
+      youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2c-.3-1.4-1.5-2.4-3-2.4H3.5C2 3.8.8 4.8.5 6.2c-.3 1.4-.5 3.8-.5 3.8s0 2.4.5 3.8c.3 1.4 1.5 2.4 3 2.4h17c1.5 0 2.7-1 3-2.4.5-1.4.5-3.8.5-3.8s0-2.4-.5-3.8zM9.5 8.5l6 3.5-6 3.5V8.5z"/></svg>',
+      instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>',
+      x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+    };
+    return icons[name];
   };
 
   // Helper: Toggle mobile menu
@@ -186,8 +195,9 @@ function initNavbar() {
     target: '_blank',
     rel: 'noopener noreferrer',
     className: 'text-white hover:text-accent-hover transition-colors',
-    'aria-label': 'YouTube'
-  }, '▶');
+    'aria-label': 'YouTube',
+    innerHTML: socialIcon('youtube')
+  });
   desktopSocial.appendChild(youtubeLink);
 
   const instagramLink = createElement('a', {
@@ -195,8 +205,9 @@ function initNavbar() {
     target: '_blank',
     rel: 'noopener noreferrer',
     className: 'text-white hover:text-accent-hover transition-colors',
-    'aria-label': 'Instagram'
-  }, '📷');
+    'aria-label': 'Instagram',
+    innerHTML: socialIcon('instagram')
+  });
   desktopSocial.appendChild(instagramLink);
 
   const twitterLink = createElement('a', {
@@ -204,8 +215,9 @@ function initNavbar() {
     target: '_blank',
     rel: 'noopener noreferrer',
     className: 'text-white hover:text-accent-hover transition-colors',
-    'aria-label': 'X (Twitter)'
-  }, '𝕏');
+    'aria-label': 'X (Twitter)',
+    innerHTML: socialIcon('x')
+  });
   desktopSocial.appendChild(twitterLink);
 
   desktopMenu.appendChild(desktopSocial);
@@ -326,8 +338,9 @@ function initNavbar() {
     target: '_blank',
     rel: 'noopener noreferrer',
     className: 'text-white hover:text-accent-hover transition-colors text-2xl',
-    'aria-label': 'YouTube'
-  }, '▶');
+    'aria-label': 'YouTube',
+    innerHTML: socialIcon('youtube')
+  });
   mobileSocialLinks.appendChild(mobileYoutubeLink);
 
   const mobileInstagramLink = createElement('a', {
@@ -335,8 +348,9 @@ function initNavbar() {
     target: '_blank',
     rel: 'noopener noreferrer',
     className: 'text-white hover:text-accent-hover transition-colors text-2xl',
-    'aria-label': 'Instagram'
-  }, '📷');
+    'aria-label': 'Instagram',
+    innerHTML: socialIcon('instagram')
+  });
   mobileSocialLinks.appendChild(mobileInstagramLink);
 
   const mobileTwitterLink = createElement('a', {
@@ -344,8 +358,9 @@ function initNavbar() {
     target: '_blank',
     rel: 'noopener noreferrer',
     className: 'text-white hover:text-accent-hover transition-colors text-2xl',
-    'aria-label': 'X (Twitter)'
-  }, '𝕏');
+    'aria-label': 'X (Twitter)',
+    innerHTML: socialIcon('x')
+  });
   mobileSocialLinks.appendChild(mobileTwitterLink);
 
   const mobileEmailLink = createElement('a', {

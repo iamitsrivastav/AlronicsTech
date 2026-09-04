@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build an obstacle avoidance robot with ultrasonic sensing, motor control, and practical robotics logic.">
+  <meta name="author" content="Alronics Tech">
+  <meta name="theme-color" content="#36ECDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Obstacle Avoidance Robot | Alronics Tech">
+  <meta property="og:description" content="A practical guide to building an obstacle avoidance robot with ultrasonic sensing and motor control.">
+  <meta property="og:url" content="https://alronicstech.com/blog/robotics/obstacle.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="canonical" href="https://alronicstech.com/blog/robotics/obstacle.html">
+  <title>Obstacle Avoidance Robot | Alronics Tech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body style="background-color: var(--bg-primary); color: var(--text-primary);">
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <script src="../../assets/js/navbar.js"></script>
+  <header class="page-hero text-white py-16"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><nav class="mb-6" aria-label="Breadcrumb"><ol class="flex flex-wrap items-center gap-2 text-sm"><li><a href="../../index.html">Home</a></li><li aria-hidden="true">/</li><li><a href="../../blog.html">Blog</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: var(--accent-primary);">Obstacle Avoidance Robot</li></ol></nav><p class="text-sm font-semibold mb-4" style="color: var(--accent-primary);">ROBOTICS · BEGINNER TO INTERMEDIATE</p><h1 class="text-4xl md:text-5xl font-bold mb-5">Obstacle Avoidance Robot</h1><p class="text-xl" style="color: rgba(255,255,255,.82);">Build a robot that detects obstacles using ultrasonic sensors and navigates around them with motor control and simple decision logic.</p></div></header>
+  <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"><article class="prose max-w-none"><section class="mb-12"><h2 class="text-3xl font-bold mb-4">What you will learn</h2><p class="text-lg text-muted">This project introduces distance sensing, motor drivers, GPIO control, real-time sensor data, and if-else logic. It can be adapted for Raspberry Pi or Arduino-based builds.</p><div class="grid sm:grid-cols-2 gap-4 mt-6"><div class="card"><h3 class="font-bold mb-2">Core concepts</h3><p class="text-muted text-sm">Ultrasonic sensing, PWM, GPIO pins, and decision-making.</p></div><div class="card"><h3 class="font-bold mb-2">Practical skills</h3><p class="text-muted text-sm">Breadboard wiring, motor control, debugging, and safe power management.</p></div></div></section><section class="mb-12"><h2 class="text-3xl font-bold mb-4">Typical components</h2><ul class="grid sm:grid-cols-2 gap-3 text-secondary"><li>Raspberry Pi or Arduino</li><li>HC-SR04 ultrasonic sensor</li><li>Two geared DC motors</li><li>Motor driver module</li><li>Robot chassis and wheels</li><li>Battery pack and jumper wires</li></ul></section><section class="mb-12"><h2 class="text-3xl font-bold mb-4">Build sequence</h2><ol class="space-y-4 text-secondary"><li><strong>1. Prepare the chassis:</strong> mount the motors, wheels, controller, and sensor.</li><li><strong>2. Wire safely:</strong> keep motor power separate from logic power and connect a common ground.</li><li><strong>3. Read distance:</strong> trigger the ultrasonic sensor and calculate the returning echo time.</li><li><strong>4. Control movement:</strong> drive forward while clear, then stop and turn when an obstacle is detected.</li><li><strong>5. Test and refine:</strong> adjust thresholds, timing, and motor speeds in small steps.</li></ol></section><aside class="tile-neutral p-5 rounded-lg mb-12"><h2 class="text-xl font-bold mb-2">Safety note</h2><p class="text-secondary">Use the correct voltage levels for your controller. Raspberry Pi GPIO pins are 3.3V and must not receive a 5V echo signal directly. Power off before changing wiring.</p></aside><div class="flex flex-wrap gap-3"><a href="../../projects.html" class="btn-base btn-primary">Explore Projects</a><a href="../../contact.html" class="btn-base btn-secondary">Ask a Question</a></div></article></main>
+  <footer class="footer-premium"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"><div><h2 class="footer-section-title text-2xl">Alronics Tech</h2><p class="footer-brand-text">Hands-on STEM learning, robotics, IoT, and AI.</p></div><nav aria-label="Footer navigation" class="flex flex-wrap gap-5"><a href="../../index.html" class="footer-link">Home</a><a href="../../blog.html" class="footer-link">Blog</a><a href="../../schools.html" class="footer-link">For Schools</a><a href="../../contact.html" class="footer-link">Contact</a></nav></div></div></footer>
+</body>
+</html>

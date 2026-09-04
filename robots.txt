@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alronicstech.com/sitemap.xml

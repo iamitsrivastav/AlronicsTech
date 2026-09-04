@@ -11,7 +11,12 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects | Alronics Tech">
   <meta property="og:description" content="Complete robotics and IoT projects with full documentation">
-  <meta property="og:url" content="https://iamitsrivastav.github.io/AlronicsTech/projects.html">
+  <meta property="og:url" content="https://alronicstech.com/projects.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Projects | Alronics Tech">
+  <meta name="twitter:description" content="Complete robotics and IoT projects with full documentation.">
+  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+  <link rel="canonical" href="https://alronicstech.com/projects.html">
 
   <title>Projects | Alronics Tech</title>
 
@@ -157,12 +162,12 @@
           <a href="./blog/robotics/obstacle.html" class="btn-base btn-primary flex-1 justify-center">
             View
           </a>
-          <button class="btn-base btn-secondary flex-1 justify-center" onclick="alert('Documentation coming soon')">
+          <a href="./blog/robotics/obstacle.html" class="btn-base btn-secondary flex-1 justify-center">
             Docs
-          </button>
-          <button class="btn-base btn-outline flex-1 justify-center" onclick="alert('Code on GitHub')">
+          </a>
+          <a href="https://github.com/iamitsrivastav/AlronicsTech" target="_blank" rel="noopener noreferrer" class="btn-base btn-outline flex-1 justify-center">
             Code
-          </button>
+          </a>
         </div>
       </div>
 
@@ -458,7 +463,7 @@
                   <path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
                 </svg>
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+              <a href="https://github.com/iamitsrivastav/AlronicsTech" target="_blank" rel="noopener noreferrer"
                  class="footer-social-link" aria-label="GitHub">
                 <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.72.08-.71.08-.71 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.14 1.18.91-.25 1.89-.37 2.86-.37.97 0 1.95.12 2.86.37 2.18-1.49 3.14-1.18 3.14-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.83 1.18 3.09 0 4.42-2.71 5.4-5.29 5.69.41.35.78 1.03.78 2.08 0 1.51-.01 2.73-.01 3.1 0 .31.21.67.8.56 4.56-1.54 7.84-5.86 7.84-10.95C23.5 5.73 18.27.5 12 .5z"/>
@@ -496,11 +501,11 @@
         <div>
           <h4 class="footer-section-title">Resources</h4>
           <ul class="space-y-3">
-            <li><a href="#" class="footer-link">📖 Documentation</a></li>
-            <li><a href="#" class="footer-link">🎓 Learning Paths</a></li>
-            <li><a href="#" class="footer-link">🐛 FAQ</a></li>
+            <li><a href="./resources.html" class="footer-link">📖 Documentation</a></li>
+            <li><a href="./resources.html" class="footer-link">🎓 Learning Paths</a></li>
+            <li><a href="./contact.html#faq" class="footer-link">🐛 FAQ</a></li>
             <li><a href="./about.html" class="footer-link">ℹ️ About Us</a></li>
-            <li><a href="#" class="footer-link">💼 Careers</a></li>
+            <li><a href="./contact.html" class="footer-link">💼 Careers</a></li>
           </ul>
         </div>
 
@@ -514,17 +519,17 @@
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="./contact.html" class="footer-link">
                 💬 Discord Community
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="./contact.html" class="footer-link">
                 🎥 YouTube Channel
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="./contact.html" class="footer-link">
                 📰 Newsletter
               </a>
             </li>
@@ -557,7 +562,7 @@
   <!-- ===== Filter Script ===== -->
   <script>
     const filterButtons = document.querySelectorAll('.difficulty-filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.project-card-modern');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', function () {
