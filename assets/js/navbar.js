@@ -54,7 +54,7 @@ function setTheme(theme) {
 function updateMetaTheme(theme) {
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   if (metaThemeColor) {
-    metaThemeColor.setAttribute('content', theme === 'dark' ? '#0b1220' : '#00203F');
+    metaThemeColor.setAttribute('content', theme === 'dark' ? '#0B1220' : '#FFFFFF');
   }
 }
 
@@ -76,9 +76,12 @@ if (document.readyState === 'loading') {
 
 function initNavbar() {
   // Configuration
+  const assetPrefix = window.location.pathname.includes('/blog/robotics/')
+    ? '../../'
+    : window.location.pathname.includes('/blog/') ? '../' : './';
   const config = {
-    logoDesktop: 'Alronics Tech',
-    logoMobile: 'Alronics Tech', // Changed from 'Alronics' to full branding
+    logoMark: `${assetPrefix}assets/images/branding/alronics-icon.png`,
+    logoFull: `${assetPrefix}assets/images/branding/alronics-logo-horizontal.png`,
     youtubeUrl: 'https://www.youtube.com/@alronicstech',
     instagramUrl: 'https://www.instagram.com/alronicstech/',
     twitterUrl: 'https://x.com/AlronicsTech',
@@ -160,10 +163,27 @@ function initNavbar() {
 
   // Logo (desktop)
   const desktopLogo = createElement('a', {
-    href: './index.html',
-    className: 'text-2xl font-bold text-white hover:text-cyan-300 transition-colors flex-shrink-0',
+    href: `${assetPrefix}index.html`,
+    className: 'navbar-brand-link',
+    'aria-label': 'Alronics Tech home',
     'aria-current': isActiveLink('./index.html') ? 'page' : 'false'
-  }, config.logoDesktop);
+  });
+  const desktopLogoFull = createElement('img', {
+    src: config.logoFull,
+    alt: 'Alronics Tech',
+    className: 'navbar-brand-horizontal',
+    width: '2172',
+    height: '724'
+  });
+  const desktopLogoMark = createElement('img', {
+    src: config.logoMark,
+    alt: '',
+    className: 'navbar-brand-mark navbar-brand-desktop-mark',
+    width: '52',
+    height: '52'
+  });
+  desktopLogo.appendChild(desktopLogoFull);
+  desktopLogo.appendChild(desktopLogoMark);
   desktopMenu.appendChild(desktopLogo);
 
   // Nav links (desktop)
@@ -177,7 +197,7 @@ function initNavbar() {
       className: `px-4 py-2 rounded-lg transition-all font-medium text-sm ${
         isActive
           ? 'btn-primary'
-          : 'text-slate-100 hover:text-white'
+          : 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)]'
       } focus:outline-2 focus:outline-offset-2 focus:outline-cyan-400`,
       'aria-current': isActive ? 'page' : 'false'
     }, link.label);
@@ -194,7 +214,7 @@ function initNavbar() {
     href: config.youtubeUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-accent-hover transition-colors',
+    className: 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)] transition-colors',
     'aria-label': 'YouTube',
     innerHTML: socialIcon('youtube')
   });
@@ -204,7 +224,7 @@ function initNavbar() {
     href: config.instagramUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-accent-hover transition-colors',
+    className: 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)] transition-colors',
     'aria-label': 'Instagram',
     innerHTML: socialIcon('instagram')
   });
@@ -214,7 +234,7 @@ function initNavbar() {
     href: config.twitterUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-accent-hover transition-colors',
+    className: 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)] transition-colors',
     'aria-label': 'X (Twitter)',
     innerHTML: socialIcon('x')
   });
@@ -249,12 +269,21 @@ function initNavbar() {
     className: 'md:hidden px-4 sm:px-6 py-3 flex justify-between items-center'
   });
 
-  // Logo (mobile) - Now shows full text
+  // Logo (mobile)
   const mobileLogo = createElement('a', {
-    href: './index.html',
-    className: 'text-lg font-bold text-white hover:text-cyan-300 transition-colors flex-shrink-0',
+    href: `${assetPrefix}index.html`,
+    className: 'navbar-brand-link navbar-brand-mobile',
+    'aria-label': 'Alronics Tech home',
     'aria-current': isActiveLink('./index.html') ? 'page' : 'false'
-  }, config.logoMobile);
+  });
+  const mobileLogoMark = createElement('img', {
+    src: config.logoMark,
+    alt: 'Alronics Tech symbol',
+    className: 'navbar-brand-mark navbar-brand-mobile-mark',
+    width: '36',
+    height: '36'
+  });
+  mobileLogo.appendChild(mobileLogoMark);
   mobileContainer.appendChild(mobileLogo);
 
   // Mobile controls container (theme toggle + hamburger)
@@ -300,7 +329,7 @@ function initNavbar() {
       className: `block px-4 py-3 rounded-lg transition-all font-semibold text-sm ${
         isActive
           ? 'btn-primary'
-          : 'text-slate-100 hover:text-white'
+          : 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)]'
       } focus:outline-2 focus:outline-offset-2 focus:outline-cyan-400`,
       'aria-current': isActive ? 'page' : 'false'
     }, link.label);
@@ -319,7 +348,8 @@ function initNavbar() {
   });
 
   const mobileSocialLabel = createElement('div', {
-    className: 'px-4 py-2 text-xs font-semibold text-slate-300 uppercase'
+    className: 'px-4 py-2 text-xs font-semibold uppercase',
+    style: 'color: var(--color-body);'
   }, 'Follow Us');
   mobileSocialSection.appendChild(mobileSocialLabel);
 
@@ -331,7 +361,7 @@ function initNavbar() {
     href: config.youtubeUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-accent-hover transition-colors text-2xl',
+    className: 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)] transition-colors text-2xl',
     'aria-label': 'YouTube',
     innerHTML: socialIcon('youtube')
   });
@@ -341,7 +371,7 @@ function initNavbar() {
     href: config.instagramUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-accent-hover transition-colors text-2xl',
+    className: 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)] transition-colors text-2xl',
     'aria-label': 'Instagram',
     innerHTML: socialIcon('instagram')
   });
@@ -351,7 +381,7 @@ function initNavbar() {
     href: config.twitterUrl,
     target: '_blank',
     rel: 'noopener noreferrer',
-    className: 'text-white hover:text-accent-hover transition-colors text-2xl',
+    className: 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)] transition-colors text-2xl',
     'aria-label': 'X (Twitter)',
     innerHTML: socialIcon('x')
   });
@@ -359,7 +389,7 @@ function initNavbar() {
 
   const mobileEmailLink = createElement('a', {
     href: `mailto:${config.email}`,
-    className: 'text-white hover:text-accent-hover transition-colors text-2xl',
+    className: 'text-[color:var(--color-heading)] hover:text-[color:var(--color-primary)] transition-colors text-2xl',
     'aria-label': 'Email us',
     innerHTML: socialIcon('mail')
   });

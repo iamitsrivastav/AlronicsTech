@@ -7,21 +7,24 @@
   <meta name="description" content="Alronics Tech Projects - Browse complete robotics, IoT, and AI projects with code, schematics, and tutorials.">
   <meta name="keywords" content="robotics projects, IoT projects, AI projects, electronics, maker projects, STEM">
   <meta name="author" content="Alronics Tech">
-  <meta name="theme-color" content="#36ECDE">
+  <meta name="theme-color" content="#FFFFFF">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects | Alronics Tech">
   <meta property="og:description" content="Complete robotics and IoT projects with full documentation">
   <meta property="og:url" content="https://alronicstech.com/projects.html">
+  <meta property="og:image" content="https://alronicstech.com/assets/images/branding/alronics-logo-horizontal.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Projects | Alronics Tech">
   <meta name="twitter:description" content="Complete robotics and IoT projects with full documentation.">
-  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+  <meta name="twitter:image" content="https://alronicstech.com/assets/images/branding/alronics-logo-horizontal.png">
+  <link rel="icon" type="image/png" href="./assets/images/branding/alronics-icon.png">
+  <link rel="apple-touch-icon" href="./assets/images/branding/alronics-icon.png">
   <link rel="canonical" href="https://alronicstech.com/projects.html">
 
   <title>Projects | Alronics Tech</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/main.css?v=18">
 
   <!-- ===== Critical: Skip Link Accessibility (must be inline to load before first paint) ===== -->
   <style>
@@ -68,37 +71,44 @@
     }
   </style>
 </head>
-<body style="background-color: var(--bg-primary); color: var(--text-primary);">
+<body class="projects-page-body" style="background-color: var(--bg-primary); color: var(--text-primary);">
   <!-- ===== Navbar ===== -->
-  <script src="./assets/js/navbar.js"></script>
+  <script src="./assets/js/navbar.js?v=5"></script>
 
   <!-- ===== Scroll Animations ===== -->
   <script src="./assets/js/scroll-animations.js"></script>
 
   <!-- ===== Page Header ===== -->
-  <header class="page-hero text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center gap-2 text-sm" style="color:var(--text-muted)">
-          <li><a href="./index.html" class="hover:text-white">Home</a></li>
-          <li style="color:var(--text-muted)">/</li>
-          <li aria-current="page" style="color:var(--accent-primary);" class="font-medium">Projects</li>
-        </ol>
-      </nav>
-      <h1 class="text-5xl font-bold mb-4">Explore STEM &amp; Robotics Projects</h1>
-      <p class="text-xl text-accent-light">
-        Build practical projects across robotics, IoT, AI, electronics, coding, and 3D design with clear guidance for every level.
-      </p>
-    </div>
-  </header>
+  <header class="page-hero projects-page-header text-white">
+    <div class="projects-page-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="projects-top-row">
+        <nav class="projects-breadcrumb" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-sm" style="color:var(--text-muted)">
+            <li><a href="./index.html" class="hover:text-white">Home</a></li>
+            <li style="color:var(--text-muted)">/</li>
+            <li aria-current="page" style="color:var(--accent-primary);" class="font-medium">Projects</li>
+          </ol>
+        </nav>
 
-  <!-- ===== Main Content ===== -->
-  <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <!-- ===== Difficulty Filter ===== -->
-    <div class="mb-12">
-      <h2 class="text-3xl font-bold mb-6">Filter by Difficulty</h2>
-      <div class="flex flex-wrap gap-3">
-        <button class="difficulty-filter-btn active btn-base btn-primary" data-difficulty="all">All</button>
+        <label class="projects-search" aria-label="Search projects">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" fill="none"></circle>
+            <path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <input type="search" placeholder="Search projects..." aria-label="Search projects">
+        </label>
+      </div>
+
+      <div class="projects-title-wrap">
+        <h1 class="text-5xl font-bold mb-4">All Projects</h1>
+      </div>
+
+      <p class="projects-subtitle">
+        Hands-on robotics, IoT, AI, electronics and more. Choose a project, build it, and learn by doing.
+      </p>
+
+      <div class="projects-filter-bar" aria-label="Filter by difficulty">
+        <button class="difficulty-filter-btn active btn-base btn-primary" data-difficulty="all">All Projects</button>
         <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-neutral text-muted font-medium hover:border-accent transition-all" data-difficulty="beginner">
           Beginner
         </button>
@@ -109,6 +119,14 @@
           Advanced
         </button>
       </div>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main id="main-content" class="projects-page-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <div id="no-projects-message" class="hidden mb-8 rounded-2xl border border-dashed border-slate-300 bg-white/60 px-6 py-8 text-center text-slate-600">
+      No projects match your current search and difficulty filter.
     </div>
 
     <!-- ===== Projects Grid ===== -->
@@ -430,15 +448,20 @@
   <footer class="footer-premium">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Footer Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
+      <div class="footer-main-grid grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
         
         <!-- Brand Section -->
         <div class="md:col-span-1">
           <div class="footer-brand-section">
-            <h3 class="footer-section-title text-2xl">Alronics Tech</h3>
-            <p class="footer-brand-text mb-6">
-              Empowering the next generation with hands-on STEM education through robotics, IoT, and AI.
-            </p>
+            <div class="footer-brand-top">
+              <a href="./index.html" aria-label="Alronics Tech home" class="inline-block">
+                <img src="./assets/images/branding/alronics-logo-horizontal.png" alt="Alronics Tech" class="footer-brand-logo" width="2172" height="724" loading="lazy" decoding="async">
+              </a>
+              <p class="footer-brand-text mb-0">
+                Empowering Minds. Engineering the Future.
+              </p>
+            </div>
+            <p class="footer-brand-description">Hands-on robotics, IoT, AI and electronics resources for students, educators and innovators around the world.</p>
             
             <!-- Social Links -->
             <div class="flex gap-3">
@@ -459,8 +482,8 @@
               </a>
               <a href="https://x.com/AlronicsTech" target="_blank" rel="noopener noreferrer" 
                  class="footer-social-link" aria-label="X (Twitter)">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <svg class="h-5 w-5" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"/>
                 </svg>
               </a>
               <a href="https://github.com/iamitsrivastav/AlronicsTech" target="_blank" rel="noopener noreferrer"
@@ -477,11 +500,12 @@
         <div>
           <h4 class="footer-section-title">Navigation</h4>
           <ul class="space-y-3">
-            <li><a href="./index.html" class="footer-link">🏠 Home</a></li>
-            <li><a href="./blog.html" class="footer-link">📝 Blog</a></li>
-            <li><a href="./projects.html" class="footer-link">🔧 Projects</a></li>
-            <li><a href="./resources.html" class="footer-link">📚 Resources</a></li>
-            <li><a href="./contact.html" class="footer-link">✉️ Contact</a></li>
+            <li><a href="./index.html" class="footer-link">Home</a></li>
+            <li><a href="./blog.html" class="footer-link">Blog</a></li>
+            <li><a href="./projects.html" class="footer-link">Projects</a></li>
+            <li><a href="./resources.html" class="footer-link">Resources</a></li>
+            <li><a href="./schools.html" class="footer-link">For Schools</a></li>
+            <li><a href="./contact.html" class="footer-link">Contact</a></li>
           </ul>
         </div>
 
@@ -489,11 +513,12 @@
         <div>
           <h4 class="footer-section-title">Categories</h4>
           <ul class="space-y-3">
-            <li><a href="./blog.html" class="footer-link">🤖 Robotics</a></li>
-            <li><a href="./blog.html" class="footer-link">📡 IoT</a></li>
-            <li><a href="./blog.html" class="footer-link">🧠 AI & ML</a></li>
-            <li><a href="./blog.html" class="footer-link">🍓 Raspberry Pi</a></li>
-            <li><a href="./blog.html" class="footer-link">🖨️ 3D Printing</a></li>
+            <li><a href="./blog.html" class="footer-link">Robotics</a></li>
+            <li><a href="./blog.html" class="footer-link">IoT</a></li>
+            <li><a href="./blog.html" class="footer-link">AI &amp; Machine Learning</a></li>
+            <li><a href="./blog.html" class="footer-link">Electronics</a></li>
+            <li><a href="./blog.html" class="footer-link">Programming</a></li>
+            <li><a href="./blog.html" class="footer-link">3D Printing</a></li>
           </ul>
         </div>
 
@@ -501,39 +526,24 @@
         <div>
           <h4 class="footer-section-title">Resources</h4>
           <ul class="space-y-3">
-            <li><a href="./resources.html" class="footer-link">📖 Documentation</a></li>
-            <li><a href="./resources.html" class="footer-link">🎓 Learning Paths</a></li>
-            <li><a href="./contact.html#faq" class="footer-link">🐛 FAQ</a></li>
-            <li><a href="./about.html" class="footer-link">ℹ️ About Us</a></li>
-            <li><a href="./contact.html" class="footer-link">💼 Careers</a></li>
+            <li><a href="./resources.html" class="footer-link">Component Datasheets</a></li>
+            <li><a href="./resources.html" class="footer-link">Code Examples</a></li>
+            <li><a href="./resources.html" class="footer-link">Software Tools</a></li>
+            <li><a href="./resources.html" class="footer-link">Learning Materials</a></li>
+            <li><a href="./blog.html" class="footer-link">Tutorials</a></li>
+            <li><a href="./resources.html" class="footer-link">External Links</a></li>
           </ul>
         </div>
 
-        <!-- Connect -->
-        <div>
-          <h4 class="footer-section-title">Get in Touch</h4>
-          <ul class="space-y-3">
-            <li>
-              <a href="mailto:alronicstech@gmail.com" class="footer-link">
-                📧 Email Us
-              </a>
-            </li>
-            <li>
-              <a href="./contact.html" class="footer-link">
-                💬 Discord Community
-              </a>
-            </li>
-            <li>
-              <a href="./contact.html" class="footer-link">
-                🎥 YouTube Channel
-              </a>
-            </li>
-            <li>
-              <a href="./contact.html" class="footer-link">
-                📰 Newsletter
-              </a>
-            </li>
-          </ul>
+        <div class="footer-newsletter-column">
+          <h4 class="footer-section-title">Stay Updated</h4>
+          <p class="footer-newsletter-copy">Get the latest tutorials, project ideas and resources straight to your inbox.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); const address=this.querySelector('input[type=email]').value; window.location.href='mailto:alronicstech@gmail.com?subject='+encodeURIComponent('Newsletter updates')+'&body='+encodeURIComponent('Please add '+address+' to the Alronics Tech newsletter list.');">
+            <label class="sr-only" for="footer-newsletter-email">Email address</label>
+            <input id="footer-newsletter-email" type="email" placeholder="your.email@example.com" required>
+            <button type="submit" aria-label="Request newsletter updates"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+          </form>
+          <p class="footer-newsletter-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>This opens an email draft; no subscription is created automatically.</p>
         </div>
       </div>
 
@@ -545,15 +555,16 @@
         <!-- Copyright -->
         <div>
           <p class="text-sm" style="color: var(--text-secondary);">
-            &copy; 2026 Alronics Tech. All rights reserved. | Made with ❤️ for STEM education
+            &copy; 2026 Alronics Tech. All rights reserved. | Made for STEM education
           </p>
         </div>
 
         <!-- Links -->
         <div class="flex flex-wrap gap-6 text-sm">
-          <a href="./about.html" class="footer-link">ℹ️ About Us</a>
-          <a href="./contact.html" class="footer-link">✉️ Contact</a>
-          <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="footer-link">▶️ YouTube</a>
+          <a href="./about.html" class="footer-link">About Us</a>
+          <a href="./contact.html" class="footer-link">Privacy Policy</a>
+          <a href="./contact.html" class="footer-link">Contact</a>
+          <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="footer-link">YouTube</a>
         </div>
       </div>
     </div>
@@ -563,31 +574,56 @@
   <script>
     const filterButtons = document.querySelectorAll('.difficulty-filter-btn');
     const projectCards = document.querySelectorAll('.project-card-modern');
+    const searchInput = document.querySelector('.projects-search input');
+    const noProjectsMessage = document.getElementById('no-projects-message');
+
+    let activeDifficulty = 'all';
+    let searchTerm = '';
+
+    function applyProjectFilters() {
+      let visibleCount = 0;
+
+      projectCards.forEach(card => {
+        const difficulty = card.getAttribute('data-difficulty');
+        const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+        const description = card.querySelector('p.text-sm')?.textContent.toLowerCase() || '';
+        const tags = Array.from(card.querySelectorAll('.tech-tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+        const cardText = `${title} ${description} ${tags}`;
+        const matchesDifficulty = activeDifficulty === 'all' || difficulty === activeDifficulty;
+        const matchesSearch = !searchTerm || cardText.includes(searchTerm.toLowerCase());
+        const isVisible = matchesDifficulty && matchesSearch;
+
+        card.style.display = isVisible ? 'block' : 'none';
+        if (isVisible) visibleCount += 1;
+      });
+
+      noProjectsMessage.classList.toggle('hidden', visibleCount !== 0);
+    }
 
     filterButtons.forEach(button => {
       button.addEventListener('click', function () {
-        const difficulty = this.getAttribute('data-difficulty');
+        activeDifficulty = this.getAttribute('data-difficulty');
 
-        // Update active button
         filterButtons.forEach(btn => {
           btn.classList.remove('btn-primary');
           btn.classList.add('border-neutral', 'text-muted');
         });
+
         this.classList.add('btn-primary');
         this.classList.remove('border-neutral', 'text-muted');
 
-        // Filter projects
-        projectCards.forEach(card => {
-          if (difficulty === 'all' || card.getAttribute('data-difficulty') === difficulty) {
-            card.style.display = 'block';
-            setTimeout(() => card.classList.add('fade-in'), 10);
-          } else {
-            card.style.display = 'none';
-            card.classList.remove('fade-in');
-          }
-        });
+        applyProjectFilters();
       });
     });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        searchTerm = this.value.trim();
+        applyProjectFilters();
+      });
+    }
+
+    applyProjectFilters();
   </script>
 </body>
 </html>

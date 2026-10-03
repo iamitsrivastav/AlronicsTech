@@ -7,21 +7,24 @@
   <meta name="description" content="Alronics Tech Resources - Free datasheets, code examples, tools, and learning materials for robotics and IoT.">
   <meta name="keywords" content="datasheets, code examples, robotics tools, learning resources, downloads">
   <meta name="author" content="Alronics Tech">
-  <meta name="theme-color" content="#36ECDE">
+  <meta name="theme-color" content="#FFFFFF">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Resources | Alronics Tech">
   <meta property="og:description" content="Free downloads, datasheets, and tools for electronics projects">
   <meta property="og:url" content="https://alronicstech.com/resources.html">
+  <meta property="og:image" content="https://alronicstech.com/assets/images/branding/alronics-logo-horizontal.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Resources | Alronics Tech">
   <meta name="twitter:description" content="Free downloads, datasheets, and tools for electronics projects.">
-  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+  <meta name="twitter:image" content="https://alronicstech.com/assets/images/branding/alronics-logo-horizontal.png">
+  <link rel="icon" type="image/png" href="./assets/images/branding/alronics-icon.png">
+  <link rel="apple-touch-icon" href="./assets/images/branding/alronics-icon.png">
   <link rel="canonical" href="https://alronicstech.com/resources.html">
 
   <title>Resources | Alronics Tech</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/main.css?v=18">
 
   <!-- ===== Critical: Skip Link Accessibility (must be inline to load before first paint) ===== -->
   <style>
@@ -68,32 +71,54 @@
     }
   </style>
 </head>
-<body style="background-color: var(--bg-primary); color: var(--text-primary);">
+<body class="resources-page-body" style="background-color: var(--bg-primary); color: var(--text-primary);">
   <!-- ===== Navbar ===== -->
-  <script src="./assets/js/navbar.js"></script>
+  <script src="./assets/js/navbar.js?v=5"></script>
 
   <!-- ===== Scroll Animations ===== -->
   <script src="./assets/js/scroll-animations.js"></script>
 
   <!-- ===== Page Header ===== -->
-  <header class="page-hero text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center gap-2 text-sm" style="color:var(--text-muted)">
-          <li><a href="./index.html" class="hover:text-white">Home</a></li>
-          <li style="color:var(--text-muted)">/</li>
-          <li aria-current="page" style="color:var(--accent-primary);" class="font-medium">Resources</li>
-        </ol>
-      </nav>
-      <h1 class="text-5xl font-bold mb-4">Learning Resources</h1>
-      <p class="text-xl text-accent">
+  <header class="page-hero resources-page-header text-white">
+    <div class="resources-page-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="resources-top-row">
+        <nav class="resources-breadcrumb" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-sm" style="color:var(--text-muted)">
+            <li><a href="./index.html" class="hover:text-white">Home</a></li>
+            <li style="color:var(--text-muted)">/</li>
+            <li aria-current="page" style="color:var(--accent-primary);" class="font-medium">Resources</li>
+          </ol>
+        </nav>
+
+        <label class="resources-search" aria-label="Search resources">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" fill="none"></circle>
+            <path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <input type="search" placeholder="Search resources..." aria-label="Search resources">
+        </label>
+      </div>
+
+      <div class="resources-title-wrap">
+        <h1 class="text-5xl font-bold mb-4">Learning Resources</h1>
+      </div>
+
+      <p class="resources-subtitle">
         Free datasheets, code samples, software tools, and external resources for your projects.
       </p>
+
+      <div class="resources-filter-bar" aria-label="Filter resources by type">
+        <button class="difficulty-filter-btn active btn-base btn-primary" data-difficulty="all">All Resources</button>
+        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-neutral text-muted font-medium hover:border-accent transition-all" data-difficulty="datasheets">Datasheets</button>
+        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-neutral text-muted font-medium hover:border-accent transition-all" data-difficulty="code">Code</button>
+        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-neutral text-muted font-medium hover:border-accent transition-all" data-difficulty="tools">Tools</button>
+        <button class="difficulty-filter-btn px-6 py-2 rounded-full border-2 border-neutral text-muted font-medium hover:border-accent transition-all" data-difficulty="learning">Learning</button>
+      </div>
     </div>
   </header>
 
   <!-- ===== Main Content ===== -->
-  <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <main id="main-content" class="resources-page-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <!-- ===== Resource Categories ===== -->
     
     <!-- Component Datasheets -->
@@ -517,7 +542,7 @@ void loop() {
         Where to buy components and what to look for when selecting suppliers and parts.
       </p>
       
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Shopping Guide 1 -->
           <div class="category-card">
           <h3 class="text-lg font-bold mb-3">­ƒƒó Budget Shopping</h3>
@@ -580,15 +605,20 @@ void loop() {
   <footer class="footer-premium">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Footer Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
+      <div class="footer-main-grid grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
         
         <!-- Brand Section -->
         <div class="md:col-span-1">
           <div class="footer-brand-section">
-            <h3 class="footer-section-title text-2xl">Alronics Tech</h3>
-            <p class="footer-brand-text mb-6">
-              Empowering the next generation with hands-on STEM education through robotics, IoT, and AI.
-            </p>
+            <div class="footer-brand-top">
+              <a href="./index.html" aria-label="Alronics Tech home" class="inline-block">
+                <img src="./assets/images/branding/alronics-logo-horizontal.png" alt="Alronics Tech" class="footer-brand-logo" width="2172" height="724" loading="lazy" decoding="async">
+              </a>
+              <p class="footer-brand-text mb-0">
+                Empowering Minds. Engineering the Future.
+              </p>
+            </div>
+            <p class="footer-brand-description">Hands-on robotics, IoT, AI and electronics resources for students, educators and innovators around the world.</p>
             
             <!-- Social Links -->
             <div class="flex gap-3">
@@ -609,8 +639,8 @@ void loop() {
               </a>
               <a href="https://x.com/AlronicsTech" target="_blank" rel="noopener noreferrer" 
                  class="footer-social-link" aria-label="X (Twitter)">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <svg class="h-5 w-5" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"/>
                 </svg>
               </a>
               <a href="https://github.com/iamitsrivastav/AlronicsTech" target="_blank" rel="noopener noreferrer"
@@ -627,11 +657,12 @@ void loop() {
         <div>
           <h4 class="footer-section-title">Navigation</h4>
           <ul class="space-y-3">
-            <li><a href="./index.html" class="footer-link">­ƒÅá Home</a></li>
-            <li><a href="./blog.html" class="footer-link">­ƒôØ Blog</a></li>
-            <li><a href="./projects.html" class="footer-link">­ƒöº Projects</a></li>
-            <li><a href="./resources.html" class="footer-link">­ƒôÜ Resources</a></li>
-            <li><a href="./contact.html" class="footer-link">Ô£ë´©Å Contact</a></li>
+            <li><a href="./index.html" class="footer-link">Home</a></li>
+            <li><a href="./blog.html" class="footer-link">Blog</a></li>
+            <li><a href="./projects.html" class="footer-link">Projects</a></li>
+            <li><a href="./resources.html" class="footer-link">Resources</a></li>
+            <li><a href="./schools.html" class="footer-link">For Schools</a></li>
+            <li><a href="./contact.html" class="footer-link">Contact</a></li>
           </ul>
         </div>
 
@@ -639,11 +670,12 @@ void loop() {
         <div>
           <h4 class="footer-section-title">Categories</h4>
           <ul class="space-y-3">
-            <li><a href="./blog.html" class="footer-link">­ƒñû Robotics</a></li>
-            <li><a href="./blog.html" class="footer-link">­ƒôí IoT</a></li>
-            <li><a href="./blog.html" class="footer-link">­ƒºá AI & ML</a></li>
-            <li><a href="./blog.html" class="footer-link">­ƒìô Raspberry Pi</a></li>
-            <li><a href="./blog.html" class="footer-link">­ƒû¿´©Å 3D Printing</a></li>
+            <li><a href="./blog.html" class="footer-link">Robotics</a></li>
+            <li><a href="./blog.html" class="footer-link">IoT</a></li>
+            <li><a href="./blog.html" class="footer-link">AI &amp; Machine Learning</a></li>
+            <li><a href="./blog.html" class="footer-link">Electronics</a></li>
+            <li><a href="./blog.html" class="footer-link">Programming</a></li>
+            <li><a href="./blog.html" class="footer-link">3D Printing</a></li>
           </ul>
         </div>
 
@@ -651,39 +683,24 @@ void loop() {
         <div>
           <h4 class="footer-section-title">Resources</h4>
           <ul class="space-y-3">
-            <li><a href="./resources.html" class="footer-link">­ƒôû Documentation</a></li>
-            <li><a href="./resources.html" class="footer-link">­ƒÄô Learning Paths</a></li>
-            <li><a href="./contact.html#faq" class="footer-link">­ƒÉø FAQ</a></li>
-            <li><a href="./about.html" class="footer-link">Ôä╣´©Å About Us</a></li>
-            <li><a href="./contact.html" class="footer-link">­ƒÆ╝ Careers</a></li>
+            <li><a href="./resources.html" class="footer-link">Component Datasheets</a></li>
+            <li><a href="./resources.html" class="footer-link">Code Examples</a></li>
+            <li><a href="./resources.html" class="footer-link">Software Tools</a></li>
+            <li><a href="./resources.html" class="footer-link">Learning Materials</a></li>
+            <li><a href="./blog.html" class="footer-link">Tutorials</a></li>
+            <li><a href="./resources.html" class="footer-link">External Links</a></li>
           </ul>
         </div>
 
-        <!-- Connect -->
-        <div>
-          <h4 class="footer-section-title">Get in Touch</h4>
-          <ul class="space-y-3">
-            <li>
-              <a href="mailto:alronicstech@gmail.com" class="footer-link">
-                ­ƒôº Email Us
-              </a>
-            </li>
-            <li>
-              <a href="./contact.html" class="footer-link">
-                ­ƒÆ¼ Discord Community
-              </a>
-            </li>
-            <li>
-              <a href="./contact.html" class="footer-link">
-                ­ƒÄÑ YouTube Channel
-              </a>
-            </li>
-            <li>
-              <a href="./contact.html" class="footer-link">
-                ­ƒô░ Newsletter
-              </a>
-            </li>
-          </ul>
+        <div class="footer-newsletter-column">
+          <h4 class="footer-section-title">Stay Updated</h4>
+          <p class="footer-newsletter-copy">Get the latest tutorials, project ideas and resources straight to your inbox.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); const address=this.querySelector('input[type=email]').value; window.location.href='mailto:alronicstech@gmail.com?subject='+encodeURIComponent('Newsletter updates')+'&body='+encodeURIComponent('Please add '+address+' to the Alronics Tech newsletter list.');">
+            <label class="sr-only" for="footer-newsletter-email">Email address</label>
+            <input id="footer-newsletter-email" type="email" placeholder="your.email@example.com" required>
+            <button type="submit" aria-label="Request newsletter updates"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+          </form>
+          <p class="footer-newsletter-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>This opens an email draft; no subscription is created automatically.</p>
         </div>
       </div>
 
@@ -695,15 +712,16 @@ void loop() {
         <!-- Copyright -->
         <div>
           <p class="text-sm" style="color: var(--text-secondary);">
-            &copy; 2026 Alronics Tech. All rights reserved. | Made with ÔØñ´©Å for STEM education
+            &copy; 2026 Alronics Tech. All rights reserved. | Made for STEM education
           </p>
         </div>
 
         <!-- Links -->
         <div class="flex flex-wrap gap-6 text-sm">
-          <a href="./about.html" class="footer-link">Ôä╣´©Å About Us</a>
-          <a href="./contact.html" class="footer-link">Ô£ë´©Å Contact</a>
-          <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="footer-link">ÔûÂ´©Å YouTube</a>
+          <a href="./about.html" class="footer-link">About Us</a>
+          <a href="./contact.html" class="footer-link">Privacy Policy</a>
+          <a href="./contact.html" class="footer-link">Contact</a>
+          <a href="https://www.youtube.com/@alronicstech" target="_blank" rel="noopener noreferrer" class="footer-link">YouTube</a>
         </div>
       </div>
     </div>
