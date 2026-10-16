@@ -7,6 +7,55 @@
 @tailwind components;
 @tailwind utilities;
 
+.skip-to-main {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  background: #0B1220;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  text-decoration: none;
+  border-radius: 0 0 0.75rem 0;
+  box-shadow: 0 12px 30px rgba(11, 18, 32, 0.2);
+}
+
+.skip-to-main:focus,
+.skip-to-main:focus-visible,
+.skip-to-main:active {
+  position: fixed;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
 /* ===== Theme Variables ===== */
 :root {
   color-scheme: light;
@@ -779,10 +828,19 @@ body::after,
 
 /* Navbar root styles */
 .navbar-root {
+  position: relative;
+  z-index: 60;
   width: 100%;
   background: var(--navbar-bg);
   color: var(--color-heading);
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.navbar-root a,
+.navbar-root button {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
 }
 
 html[data-theme="light"] .navbar-root a { color: var(--color-heading); }
@@ -846,6 +904,14 @@ html[data-theme="light"] .tile-neutral {
 /* Video thumbnail neutral treatment */
 .video-thumb {
   background: linear-gradient(135deg, rgba(54,236,222,0.05), rgba(0,0,0,0.03));
+  font-size: clamp(1.5rem, 2vw, 3.2rem) !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.06em !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* CTA panel for newsletter inside dark section */

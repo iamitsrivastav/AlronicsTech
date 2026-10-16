@@ -24,68 +24,66 @@
   <title>Contact | Alronics Tech</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./assets/css/main.css?v=18">
+  <link rel="stylesheet" href="./assets/css/main.css?v=19">
 
   <!-- ===== Critical: Skip Link Accessibility (must be inline to load before first paint) ===== -->
   <style>
-    /* Hide skip link by default using fixed positioning so it never affects layout
-       (must NOT occupy document flow; use position: fixed and keep it off-screen).
-       This is intentionally inline and does not depend on Tailwind or external CSS. */
     .skip-to-main {
-      position: fixed !important;
-      top: -9999px !important; /* keep out of viewport */
-      left: 0 !important;
-      z-index: 99999 !important;
-      background-color: #00203F !important;
-      color: #FFFFFF !important;
-      padding: 0.75rem 1.5rem !important;
-      text-decoration: none !important;
-      font-weight: 600 !important;
-      text-align: center !important;
-      white-space: nowrap !important;
-      display: inline-block !important;
-      width: auto !important;
-      height: auto !important;
-      overflow: hidden !important;
-      clip: rect(0 0 0 0) !important;
-      clip-path: inset(50%) !important;
-      border: 0 !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+      left: 0;
+      top: 0;
+      z-index: 99999;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.75rem 1.25rem;
+      background: #0B1220;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.2;
+      text-decoration: none;
+      border-radius: 0 0 0.75rem 0;
+      box-shadow: 0 12px 30px rgba(11, 18, 32, 0.2);
     }
 
-    /* Show on keyboard focus only (appear visually and be keyboard-operable) */
-    .skip-to-main:focus {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      width: 100% !important;
-      clip: auto !important;
-      clip-path: none !important;
-      overflow: visible !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      pointer-events: auto !important;
-      outline: 2px solid white !important;
-      outline-offset: 2px !important;
-      transform: translateY(0) !important;
-    }
-
-    /* Ensure navbar is always visible - fallback if Tailwind doesn't load */
-    nav[role="navigation"] {
-      position: sticky !important;
-      top: 0 !important;
-      z-index: 50 !important;
-      display: block !important;
-      width: 100% !important;
+    .skip-to-main.is-visible,
+    .skip-to-main:focus,
+    .skip-to-main:focus-visible,
+    .skip-to-main:active {
+      position: fixed;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      clip-path: none;
+      white-space: nowrap;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      outline: 2px solid #FFFFFF;
+      outline-offset: 2px;
     }
   </style>
 </head>
 <body style="background-color: var(--bg-primary); color: var(--text-primary);">
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
   <!-- ===== Navbar ===== -->
-  <script src="./assets/js/navbar.js?v=5"></script>
+  <script src="./assets/js/navbar.js?v=6"></script>
 
   <!-- ===== Scroll Animations ===== -->
   <script src="./assets/js/scroll-animations.js"></script>

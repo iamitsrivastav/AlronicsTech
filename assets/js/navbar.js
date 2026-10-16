@@ -67,14 +67,14 @@ function toggleTheme() {
 }
 
 // Initialize theme on DOM ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initTheme);
-} else {
-  initTheme();
-}
+initTheme();
 
 
 function initNavbar() {
+  if (document.querySelector('.navbar-root')) {
+    return;
+  }
+
   // Configuration
   const assetPrefix = window.location.pathname.includes('/blog/robotics/')
     ? '../../'
