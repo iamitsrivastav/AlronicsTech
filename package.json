@@ -1,0 +1,27 @@
+{
+  "name": "alronicstech",
+  "version": "1.0.0",
+  "description": "**Status:** ✅ COMPLETE & PRODUCTION-READY",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamitsrivastav/AlronicsTech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/iamitsrivastav/AlronicsTech/issues"
+  },
+  "homepage": "https://github.com/iamitsrivastav/AlronicsTech#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.0"
+  }
+}
